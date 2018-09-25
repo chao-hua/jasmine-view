@@ -2,10 +2,11 @@
   "name": "jasmine-view",
   "version": "0.0.1",
   "description": "A Component Library for Vue.",
+  "main": "src/index.js",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
+    "examples:build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "cd:docs": "cd docs",

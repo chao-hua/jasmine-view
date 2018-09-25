@@ -3,7 +3,7 @@
  */
 // import Element from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
-import jasmineView from '../../src/index';
+import JasmineView from '../../src/index';
 import '../../src/styles/index.scss'
 
 export default ({
@@ -13,5 +13,5 @@ export default ({
     siteData // 站点元数据
 }) => {
     // ...做一些其他的应用级别的优化
-    Vue.use(jasmineView)
+    Vue.use(JasmineView)
 }
