@@ -48,10 +48,12 @@
     },
 
     computed: {
+      // TODO
       buttonDisabled() {
         return this.disabled;
       }
     },
+
     methods: {
       handleClick(e) {
         this.$emit('click', e);
