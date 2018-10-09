@@ -55,6 +55,7 @@
 
     methods: {
       handleClick(e) {
+        // TODO
         this.$emit('click', e);
       }
     }
