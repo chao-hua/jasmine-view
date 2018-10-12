@@ -6,6 +6,9 @@
                     <li>
                         <router-link to="/button">Button</router-link>
                     </li>
+                    <li>
+                        <router-link to="/row">Row</router-link>
+                    </li>
                 </ul>
             </nav>
             <router-view></router-view>
@@ -20,9 +23,11 @@ nav {
         display: flex;
         flex-wrap: wrap;
     }
+
     li {
         display: inline-block;
     }
+
     li+li {
         border-left: solid 1px #bbb;
         padding-left: 10px;

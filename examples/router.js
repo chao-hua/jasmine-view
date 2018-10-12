@@ -12,9 +12,15 @@ export default new Router({
         },
         {
             path: '/button',
-            name: 'about',
+            name: 'button',
             component: () =>
                 import ('./views/button.vue')
-        }
+        },
+        {
+            path: '/row',
+            name: 'row',
+            component: () =>
+                import ('./views/row.vue')
+        },
     ]
 })
