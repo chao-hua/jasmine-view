@@ -17,10 +17,10 @@ export default {
         align: {
             type: String,
             default: 'start',
-            /*validator: function(v) {
-                return ['start ', 'end ', 'center ', 'baseline ', 'stretch'].indexOf(v) !== -1;
-            }*/
-        },
+            validator: function(v) {
+                return ['start', 'end', 'center', 'baseline', 'stretch'].indexOf(v) !== -1;
+            }
+        }
     },
     computed: {
         style() {

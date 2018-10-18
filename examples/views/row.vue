@@ -1,6 +1,6 @@
 <template>
     <div>
-        <js-row class="row" :gutter="20">
+        <js-row type="flex" justify="end" align="end" class="row" :gutter="20">
             <div class="item item-1"></div>
             <div class="item item-2"></div>
             <div class="item item-3"></div>

@@ -1,7 +1,48 @@
+@import "styles/mixins/utils.scss";
+
 .js-row {
-    display: block;
+    position: relative;
+    box-sizing: border-box;
+    @include utils-clearfix;
 }
 
 .js-row--flex {
     display: flex;
+
+    &:after,
+    &:before {
+        display: none;
+    }
+
+    &.is-justify-end {
+        justify-content: flex-end;
+    }
+
+    &.is-justify-center {
+        justify-content: center;
+    }
+
+    &.is-justify-space-between {
+        justify-content: space-between;
+    }
+
+    &.is-justify-space-around {
+        justify-content: space-around;
+    }
+
+    &.is-align-end {
+        align-items: flex-end;
+    }
+
+    &.is-align-center {
+        align-items: center;
+    }
+
+    &.is-align-baseline {
+        align-items: baseline;
+    }
+
+    &.is-align-stretch {
+        align-items: stretch;
+    }
 }

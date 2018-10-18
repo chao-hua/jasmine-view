@@ -22,6 +22,7 @@ module.exports = {
         config.resolve.alias
             .set('@$', resolve('src'))
             .set('components', resolve('src/components'))
+            .set('styles', resolve('src/styles'))
             .set('examples', resolve('examples'))
             .set('docs', resolve('docs'));
         //打包文件带hash
