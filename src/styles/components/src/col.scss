@@ -1,4 +1,13 @@
-@import "../../common/utils.scss";
-@import "../../common/mixins.scss";
+@import '../../common/index.scss';
 
-@include b(col) {}
+
+[class *=#{$namespace + $block-separator + col}] {
+    float: left;
+    box-sizing: border-box;
+}
+
+@for $i from 0 through 24 {
+    .#{$namespace + $block-separator + col + $block-separator + $i} {
+        width: (1 / 24 * $i * 100) * 1%;
+    }
+}

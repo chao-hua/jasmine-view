@@ -1,5 +1,4 @@
-@import "../../common/utils.scss";
-@import "../../common/mixins.scss";
+@import '../../common/index.scss';
 
 @include b(row) {
     position: relative;

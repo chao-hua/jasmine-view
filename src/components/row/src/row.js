@@ -24,12 +24,12 @@ export default {
     },
     computed: {
         style() {
-            const s = {};
+            const style = {};
             if (this.gutter) {
-                s.marginLeft = `-${this.gutter / 2}px`;
-                s.marginRight = s.marginLeft;
+                style.marginLeft = `-${this.gutter / 2}px`;
+                style.marginRight = style.marginLeft;
             }
-            return s;
+            return style;
         }
     },
     render(ce) {

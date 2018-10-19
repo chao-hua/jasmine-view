@@ -1,4 +1,4 @@
-@import "../../common/mixins.scss";
+@import '../../common/index.scss';
 
 @include b(button) {
     display: inline-block;
