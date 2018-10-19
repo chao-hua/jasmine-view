@@ -9,6 +9,9 @@
                     <li>
                         <router-link to="/row">Row</router-link>
                     </li>
+                    <li>
+                        <router-link to="/col">Col</router-link>
+                    </li>
                 </ul>
             </nav>
             <router-view></router-view>

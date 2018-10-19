@@ -22,5 +22,11 @@ export default new Router({
             component: () =>
                 import ('./views/row.vue')
         },
+        {
+            path: '/col',
+            name: 'col',
+            component: () =>
+                import ('./views/col.vue')
+        },
     ]
 })
