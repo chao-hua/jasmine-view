@@ -1,0 +1,51 @@
+@import './config.scss';
+
+/* BEM
+ --------------------- */
+
+@mixin b($block) {
+    // set global property
+    $B: $namespace + $block-separator + $block !global;
+    @debug $B;
+
+    .#{$B} {
+        @content;
+    }
+}
+
+
+@mixin e($element) {
+    // set global property
+    $E: $element !global;
+    $currentSelector: #{& + $element-separator + $element};
+    @debug $currentSelector;
+
+    @at-root {
+        #{&} {
+            #{$currentSelector} {
+                @content;
+            }
+        }
+    }
+}
+
+
+@mixin m($modifier) {
+    $currentSelector: #{& + $modifier-separator + $modifier};
+    @debug $currentSelector;
+
+    @at-root {
+        #{$currentSelector} {
+            @content;
+        }
+    }
+}
+
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @debug #{$state-prefix + $state};
+            @content;
+        }
+    }
+}

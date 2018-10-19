@@ -1,4 +1,6 @@
-.js-button {
+@import "../../common/mixins.scss";
+
+@include b(button) {
     display: inline-block;
     line-height: 1;
     white-space: nowrap;

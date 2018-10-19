@@ -1,48 +1,49 @@
-@import "styles/common/utils.scss";
+@import "../../common/utils.scss";
+@import "../../common/mixins.scss";
 
-.js-row {
+@include b(row) {
     position: relative;
     box-sizing: border-box;
     @include utils-clearfix;
-}
 
-.js-row--flex {
-    display: flex;
+    @include m(flex) {
+        display: flex;
 
-    &:after,
-    &:before {
-        display: none;
-    }
+        &:after,
+        &:before {
+            display: none;
+        }
 
-    &.is-justify-end {
-        justify-content: flex-end;
-    }
+        @include when(justify-end) {
+            justify-content: flex-end;
+        }
 
-    &.is-justify-center {
-        justify-content: center;
-    }
+        @include when(justify-center) {
+            justify-content: center;
+        }
 
-    &.is-justify-space-between {
-        justify-content: space-between;
-    }
+        @include when(justify-space-between) {
+            justify-content: space-between;
+        }
 
-    &.is-justify-space-around {
-        justify-content: space-around;
-    }
+        @include when(justify-space-around) {
+            justify-content: space-around;
+        }
 
-    &.is-align-end {
-        align-items: flex-end;
-    }
+        @include when(align-end) {
+            align-items: flex-end;
+        }
 
-    &.is-align-center {
-        align-items: center;
-    }
+        @include when(align-center) {
+            align-items: center;
+        }
 
-    &.is-align-baseline {
-        align-items: baseline;
-    }
+        @include when(align-baseline) {
+            align-items: baseline;
+        }
 
-    &.is-align-stretch {
-        align-items: stretch;
+        @include when(align-stretch) {
+            align-items: stretch;
+        }
     }
 }
