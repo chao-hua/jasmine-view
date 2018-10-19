@@ -1,9 +1,9 @@
 <template>
     <div>
-        <js-row type="flex" justify="end" align="end" class="row" :gutter="20">
-            <div class="item item-1"></div>
-            <div class="item item-2"></div>
-            <div class="item item-3"></div>
+        <js-row type="flex" justify="center" align="stretch" class="row">
+            <div class="item item-1">item1</div>
+            <div class="item item-2">item2</div>
+            <div class="item item-3">item3</div>
         </js-row>
     </div>
 </template>
@@ -16,14 +16,21 @@ export default {
     }
 }
 </script>
-<style>
-.row{
-	margin:10px 0;
+<style lang="scss">
+.row {
+    margin: 10px 0;
+    height: 200px;
 }
+
 .item {
-    width: 50px;
-    height: 30px;
     background-color: #9999CC;
     border-radius: 4px;
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        // height: $i * 50 + px;
+        width: $i * 50 + px;
+    }
 }
 </style>
