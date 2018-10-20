@@ -16,6 +16,7 @@ export default {
     computed: {
         gutter() {
             let parent = this.$parent;
+            console.log(parent)
             while (parent && parent.$options.componentName !== 'JsRow') {
                 parent = parent.$parent;
             }
@@ -25,12 +26,10 @@ export default {
     render(ce) {
         let style = {},
             classList = [];
-
         if (this.gutter) {
             style.paddingLeft = this.gutter / 2 + 'px';
             style.paddingRight = style.paddingLeft;
         }
-
         ['span', 'offset', 'pull', 'push'].forEach(item => {
             if (this[item] || this[item] === 0) {
                 classList.push(

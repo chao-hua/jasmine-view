@@ -1,5 +1,6 @@
 export default {
     name: 'JsRow',
+    componentName: 'JsRow',
     props: {
         tag: {
             type: String,

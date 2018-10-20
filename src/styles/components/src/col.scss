@@ -7,7 +7,26 @@
 }
 
 @for $i from 0 through 24 {
+
+    // js-col-i
     .#{$namespace + $block-separator + col + $block-separator + $i} {
         width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    // js-col-offset-i
+    .#{$namespace + $block-separator + col + $block-separator + offset + $block-separator + $i} {
+        margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    // js-col-pull-i
+    .#{$namespace + $block-separator + col + $block-separator + pull + $block-separator + $i} {
+        position: relative;
+        right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    // js-col-push-i
+    .#{$namespace + $block-separator + col + $block-separator + push + $block-separator + $i} {
+        position: relative;
+        left: (1 / 24 * $i * 100) * 1%;
     }
 }
