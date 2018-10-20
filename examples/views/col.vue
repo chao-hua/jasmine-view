@@ -47,13 +47,7 @@
     </div>
 </template>
 <script>
-export default {
-    methods: {
-        test() {
-            alert('测试');
-        }
-    }
-}
+export default {}
 </script>
 <style lang="scss">
 #col {
