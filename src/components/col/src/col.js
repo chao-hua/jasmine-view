@@ -16,7 +16,6 @@ export default {
     computed: {
         gutter() {
             let parent = this.$parent;
-            console.log(parent)
             while (parent && parent.$options.componentName !== 'JsRow') {
                 parent = parent.$parent;
             }
