@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="row">
         <js-row type="flex" justify="center" align="stretch" class="row">
             <div class="item item-1">item1</div>
             <div class="item item-2">item2</div>
@@ -17,20 +17,22 @@ export default {
 }
 </script>
 <style lang="scss">
-.row {
-    margin: 10px 0;
-    height: 200px;
-}
+#row {
+    .row {
+        margin: 10px 0;
+        height: 200px;
+    }
 
-.item {
-    background-color: #9999CC;
-    border-radius: 4px;
-}
+    .item {
+        background-color: #9999CC;
+        border-radius: 4px;
+    }
 
-@for $i from 1 through 3 {
-    .item-#{$i} {
-        // height: $i * 50 + px;
-        width: $i * 50 + px;
+    @for $i from 1 through 3 {
+        .item-#{$i} {
+            // height: $i * 50 + px;
+            width: $i * 50 + px;
+        }
     }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="col">
         <js-row class="row">
             <js-col class="item item-1" :span="10">js-col-1</js-col>
             <js-col class="item item-2">js-col-2</js-col>
@@ -17,20 +17,22 @@ export default {
 }
 </script>
 <style lang="scss">
-.row {
-    margin: 10px 0;
-    height: 200px;
-}
+#col {
+    .row {
+        margin: 10px 0;
+        height: 200px;
+    }
 
-.item {
-    background-color: #9999CC;
-    border-radius: 4px;
-}
+    .item {
+        background-color: #9999CC;
+        border-radius: 4px;
+    }
 
-@for $i from 1 through 3 {
-    .item-#{$i} {
-        // height: $i * 50 + px;
-        // width: $i * 80 + px;
+    @for $i from 1 through 3 {
+        .item-#{$i} {
+            // height: $i * 50 + px;
+            // width: $i * 80 + px;
+        }
     }
 }
 </style>
