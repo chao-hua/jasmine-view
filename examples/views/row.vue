@@ -8,13 +8,7 @@
     </div>
 </template>
 <script>
-export default {
-    methods: {
-        test() {
-            alert('测试');
-        }
-    }
-}
+export default {}
 </script>
 <style lang="scss">
 #row {
@@ -30,7 +24,6 @@ export default {
 
     @for $i from 1 through 3 {
         .item-#{$i} {
-            // height: $i * 50 + px;
             width: $i * 50 + px;
         }
     }
