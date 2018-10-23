@@ -1,3 +1,4 @@
+// clear float
 @mixin utils-clearfix {
     &:after {
         display: block;
@@ -6,4 +7,38 @@
         line-height: 0;
         visibility: hidden;
     }
+}
+
+// opacity set
+@mixin utils-opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// text spillover to ellipsis
+@mixin utils-text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// text spillover to ellipsis of WebKit
+@mixin utils-webkit-text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+// use rem to set font-size
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
 }
