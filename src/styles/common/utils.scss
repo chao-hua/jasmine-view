@@ -33,12 +33,8 @@
 }
 
 // use rem to set font-size
-@function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
+@mixin utils-font-size($size) {
     font-size: $size;
-    font-size: calculateRem($size);
+    $remSize: $size / 16px;
+    font-size: $remSize * 1rem;
 }

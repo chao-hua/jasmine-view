@@ -15,5 +15,5 @@
     margin: 0;
     border-radius: 4px;
     padding: 10px 14px;
-    font-size: 14px;
+    @include utils-font-size(14px);
 }
