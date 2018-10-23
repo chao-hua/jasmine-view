@@ -4,7 +4,6 @@
  --------------------- */
 
 @mixin b($block) {
-    // set global property
     $B: $namespace + $block-separator + $block !global;
     @debug $B;
 
@@ -15,13 +14,13 @@
 
 
 @mixin e($element) {
-    // set global property
     $E: $element !global;
-    $currentSelector: #{& + $element-separator + $element};
+    $selector: &;
+    $currentSelector: #{$selector + $element-separator + $element};
     @debug $currentSelector;
 
     @at-root {
-        #{&} {
+        #{$selector} {
             #{$currentSelector} {
                 @content;
             }
@@ -31,7 +30,8 @@
 
 
 @mixin m($modifier) {
-    $currentSelector: #{& + $modifier-separator + $modifier};
+    $selector: &;
+    $currentSelector: #{$selector + $modifier-separator + $modifier};
     @debug $currentSelector;
 
     @at-root {
