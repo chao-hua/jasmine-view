@@ -56,3 +56,16 @@
         }
     }
 }
+
+@mixin share-rule($name) {
+    $rule-name: '%share-'+$name;
+
+    @at-root #{$rule-name} {
+        @content;
+    }
+
+}
+
+@mixin extend-rule($name) {
+    @extend #{'%share-'+$name};
+}
