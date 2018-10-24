@@ -1,11 +1,11 @@
 @import './config.scss';
+@import './function.scss';
 
-/* BEM
+/* BEM mixins
  --------------------- */
 
 @mixin b($block) {
     $B: $namespace + $block-separator + $block !global;
-    @debug $B;
 
     .#{$B} {
         @content;
@@ -17,10 +17,19 @@
     $E: $element !global;
     $selector: &;
     $currentSelector: #{$selector + $element-separator + $element};
-    @debug $currentSelector;
 
-    @at-root {
-        #{$selector} {
+    @if hitAllSpecialNestRule($selector) {
+        @at-root {
+            #{$selector} {
+                #{$B + $element-separator + $element} {
+                    @content;
+                }
+            }
+        }
+    }
+
+    @else {
+        @at-root {
             #{$currentSelector} {
                 @content;
             }
@@ -32,7 +41,6 @@
 @mixin m($modifier) {
     $selector: &;
     $currentSelector: #{$selector + $modifier-separator + $modifier};
-    @debug $currentSelector;
 
     @at-root {
         #{$currentSelector} {
@@ -43,8 +51,7 @@
 
 @mixin when($state) {
     @at-root {
-        &.#{$state-prefix + $state} {
-            @debug #{$state-prefix + $state};
+        #{&}.#{$state-prefix + $state} {
             @content;
         }
     }

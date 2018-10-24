@@ -1,0 +1,38 @@
+@import './config.scss';
+
+/* for BEM mixins
+ --------------------- */
+
+@function selectorToString($selector) {
+    $selector: inspect($selector);
+    @return #{$selector};
+}
+
+
+@function containsFlag($selector, $flag) {
+    $selector: selectorToString($selector);
+
+    @if str-index($selector, $flag) {
+        @return true;
+    }
+
+    @else {
+        @return false;
+    }
+}
+
+@function containsModifier($selector) {
+    @return containsFlag($selector, $modifier-separator);
+}
+
+@function containsState($selector) {
+    @return containsFlag($selector, '.'+ $state-prefix);
+}
+
+@function containsPseudo($selector) {
+    @return containsFlag($selector, ':');
+}
+
+@function hitAllSpecialNestRule($selector) {
+    @return containsModifier($selector) or containsState($selector) or containsPseudo($selector);
+}
