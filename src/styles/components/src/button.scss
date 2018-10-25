@@ -37,4 +37,16 @@
         border-color: mix($--color-black, $--color-primary, 10%);
         outline: none;
     }
+
+    @include when(disabled) {
+
+        &,
+        &:focus,
+        &:hover {
+            cursor: not-allowed;
+            color: $--button-disabled-color;
+            border-color: $--button-disabled-border-color;
+            background-color: $--button-disabled-fill;
+        }
+    }
 }
