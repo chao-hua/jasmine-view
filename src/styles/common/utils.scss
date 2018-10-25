@@ -38,3 +38,10 @@
     $remSize: $size / 16px;
     font-size: $remSize * 1rem;
 }
+
+// set select options
+@mixin utils-user-select($value) {
+  -moz-user-select: $value;
+  -webkit-user-select: $value;
+  -ms-user-select: $value;
+}

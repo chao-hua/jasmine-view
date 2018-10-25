@@ -5,15 +5,36 @@
     line-height: 1;
     white-space: nowrap;
     cursor: pointer;
-    background: #fff;
-    border: 1px solid #bfcbd9;
-    color: #1f2d3d;
     -webkit-appearance: none;
     text-align: center;
     box-sizing: border-box;
     outline: 0;
     margin: 0;
-    border-radius: 4px;
-    padding: 10px 14px;
-    @include utils-font-size(14px);
+    transition: .1s;
+    @include utils-user-select(none);
+
+    border: $--border-base;
+    border-radius: $--border-radius-base;
+    border-color: $--button-default-border-color;
+    background: $--button-default-fill;
+    color: $--button-default-color;
+    padding: $--button-padding-vertical $--button-padding-horizontal;
+    @include utils-font-size($--button-font-size);
+
+    &+& {
+        margin-left: 10px;
+    }
+
+    &:focus,
+    &:hover {
+        color: $--color-primary;
+        border-color: $--color-primary-light;
+        background-color: $--color-primary-lighter;
+    }
+
+    &:active {
+        color: mix($--color-black, $--color-primary, 10%);
+        border-color: mix($--color-black, $--color-primary, 10%);
+        outline: none;
+    }
 }
