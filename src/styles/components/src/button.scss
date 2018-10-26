@@ -28,8 +28,8 @@
     &:focus,
     &:hover {
         color: $--color-primary;
-        border-color: $--color-primary-light;
-        background-color: $--color-primary-lighter;
+        border-color: $--color-primary;
+        // background-color: $--color-primary-lighter;
     }
 
     &:active {
