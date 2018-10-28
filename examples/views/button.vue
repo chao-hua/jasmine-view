@@ -9,7 +9,7 @@
 export default {
     methods: {
         test() {
-            alert('测试');
+            alert('测试1');
         }
     }
 }
