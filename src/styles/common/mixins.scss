@@ -1,5 +1,6 @@
 @import './config.scss';
 @import './function.scss';
+@import './utils.scss';
 
 /* BEM mixins
  --------------------- */
@@ -139,5 +140,19 @@
 
     &.is-plain {
         @include button-plain($background-color);
+    }
+}
+
+@mixin button-size($font-size, $border-radius, $padding-vertical, $padding-horizontal, $padding-round-horizontal:$padding-horizontal) {
+    @include utils-font-size($font-size);
+    padding: $padding-vertical $padding-horizontal;
+    border-radius: $border-radius;
+
+    &.is-round {
+        padding: $padding-vertical $padding-round-horizontal;
+    }
+
+    &.is-circle {
+        padding: $padding-vertical;
     }
 }

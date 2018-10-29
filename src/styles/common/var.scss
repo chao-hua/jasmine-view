@@ -52,6 +52,18 @@ $--button-padding-text-horizontal: 0 !default;
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
 
+$--button-medium-font-size: 14px !default;
+$--button-medium-border-radius: $--border-radius-base !default;
+$--button-medium-padding-vertical: 8px !default;
+$--button-medium-padding-horizontal: 8px !default;
+$--button-medium-padding-round-horizontal: 12px !default;
+
+$--button-small-font-size: 12px !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
+$--button-small-padding-vertical: 6px !default;
+$--button-small-padding-horizontal: 6px !default;
+$--button-small-padding-round-horizontal: 10px !default;
+
 $--button-default-color: $--color-text-regular !default;
 $--button-default-fill: $--color-white !default;
 $--button-default-border-color: $--border-color-base !default;

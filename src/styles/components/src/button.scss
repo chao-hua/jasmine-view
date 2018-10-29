@@ -14,12 +14,10 @@
     @include utils-user-select(none);
 
     border: $--border-base;
-    border-radius: $--button-border-radius;
     border-color: $--button-default-border-color;
     background-color: $--button-default-fill;
     color: $--button-default-color;
-    padding: $--button-padding-vertical $--button-padding-horizontal;
-    @include utils-font-size($--button-font-size);
+    @include button-size($--button-font-size, $--button-border-radius, $--button-padding-vertical, $--button-padding-horizontal, $--button-padding-round-horizontal);
 
     &+& {
         margin-left: 10px;
@@ -64,12 +62,10 @@
 
     @include when(round) {
         border-radius: 20px;
-        padding: $--button-padding-vertical $--button-padding-round-horizontal;
     }
 
     @include when(circle) {
         border-radius: 50%;
-        padding: $--button-padding-vertical;
     }
 
     @include when(plain) {
@@ -155,5 +151,13 @@
         &.is-plain:focus {
             border-color: transparent;
         }
+    }
+
+    @include m(medium) {
+        @include button-size($--button-medium-font-size, $--button-medium-border-radius, $--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-padding-round-horizontal);
+    }
+
+    @include m(small) {
+        @include button-size($--button-small-font-size, $--button-small-border-radius, $--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-padding-round-horizontal);
     }
 }
