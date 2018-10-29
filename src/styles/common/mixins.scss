@@ -69,3 +69,75 @@
 @mixin extend-rule($name) {
     @extend #{'%share-'+$name};
 }
+
+
+/* Button
+ --------------------- */
+
+@mixin button-plain($color) {
+    color: $color;
+    background-color: mix($--color-white, $color, 90%);
+    border-color: mix($--color-white, $color, 50%);
+
+    &:hover,
+    &:focus {
+        color: $--color-white;
+        background-color: $color;
+        border-color: $color;
+    }
+
+    &:active {
+        color: $--color-white;
+        background-color: mix($--color-black, $color, $--button-active-shade-percent);
+        border-color: mix($--color-black, $color, $--button-active-shade-percent);
+        outline: none;
+    }
+
+    &.is-disabled {
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: mix($--color-white, $color, 40%);
+            background-color: mix($--color-white, $color, 90%);
+            border-color: mix($--color-white, $color, 80%);
+        }
+    }
+}
+
+
+@mixin button-variant($color, $background-color, $border-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+
+    &:focus,
+    &:hover {
+        color: $color;
+        background-color: mix($--color-white, $background-color, $--button-hover-tint-percent);
+        border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
+    }
+
+    &:active {
+        color: $color;
+        background-color: mix($--color-black, $background-color, $--button-active-shade-percent);
+        border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+        outline: none;
+    }
+
+    &.is-disabled {
+
+        &,
+        &:focus,
+        &:hover {
+            color: $--color-white;
+            background-color: mix($background-color, $--color-white);
+            border-color: mix($border-color, $--color-white);
+        }
+    }
+
+    &.is-plain {
+        @include button-plain($background-color);
+    }
+}

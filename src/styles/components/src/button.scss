@@ -14,9 +14,9 @@
     @include utils-user-select(none);
 
     border: $--border-base;
-    border-radius: $--border-radius-base;
+    border-radius: $--button-border-radius;
     border-color: $--button-default-border-color;
-    background: $--button-default-fill;
+    background-color: $--button-default-fill;
     color: $--button-default-color;
     padding: $--button-padding-vertical $--button-padding-horizontal;
     @include utils-font-size($--button-font-size);
@@ -29,24 +29,131 @@
     &:hover {
         color: $--color-primary;
         border-color: $--color-primary;
-        // background-color: $--color-primary-lighter;
+        background-color: $--color-primary-lighter;
     }
 
     &:active {
-        color: mix($--color-black, $--color-primary, 10%);
-        border-color: mix($--color-black, $--color-primary, 10%);
+        color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+        border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
         outline: none;
     }
 
     @include when(disabled) {
-
-        &,
-        &:focus,
-        &:hover {
+        @include share-rule(dis) {
             cursor: not-allowed;
             color: $--button-disabled-color;
             border-color: $--button-disabled-border-color;
             background-color: $--button-disabled-fill;
+        }
+
+        &,
+        &:focus,
+        &:hover {
+            @include extend-rule(dis);
+        }
+
+        &.is-plain {
+
+            &,
+            &:focus,
+            &:hover {
+                @include extend-rule(dis);
+            }
+        }
+    }
+
+    @include when(round) {
+        border-radius: 20px;
+        padding: $--button-padding-vertical $--button-padding-round-horizontal;
+    }
+
+    @include when(circle) {
+        border-radius: 50%;
+        padding: $--button-padding-vertical;
+    }
+
+    @include when(plain) {
+
+        &:focus,
+        &:hover {
+            color: $--color-primary;
+            border-color: $--color-primary;
+            background-color: $--color-white;
+        }
+
+        &:active {
+            background-color: $--color-white;
+            color: mix($--color-black, $--color-primary, 10%);
+            border-color: mix($--color-black, $--color-primary, 10%);
+            outline: none;
+        }
+    }
+
+    @include m(primary) {
+        @include button-variant($--button-primary-color,
+        $--button-primary-fill,
+        $--button-primary-border-color);
+    }
+
+    @include m(success) {
+        @include button-variant($--button-success-color,
+        $--button-success-fill,
+        $--button-success-border-color);
+    }
+
+    @include m(warning) {
+        @include button-variant($--button-warning-color,
+        $--button-warning-fill,
+        $--button-warning-border-color);
+    }
+
+    @include m(danger) {
+        @include button-variant($--button-danger-color,
+        $--button-danger-fill,
+        $--button-danger-border-color);
+    }
+
+    @include m(info) {
+        @include button-variant($--button-info-color,
+        $--button-info-fill,
+        $--button-info-border-color);
+    }
+
+    @include m(text) {
+        border-color: transparent;
+        color: $--color-primary;
+        background: transparent;
+        padding: $--button-padding-horizontal $--button-padding-text-horizontal;
+
+        &:focus,
+        &:hover {
+            color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        &:active {
+            color: mix($--color-black, $--color-primary, $--button-hover-tint-percent);
+            background-color: transparent;
+            border-color: transparent;
+            outline: none;
+        }
+
+        &.is-disabled,
+        &.is-disabled:hover,
+        &.is-disabled:focus {
+            border-color: transparent;
+
+            &.is-plain {
+                border-color: transparent;
+            }
+
+        }
+
+        &.is-plain,
+        &.is-plain:hover,
+        &.is-plain:focus {
+            border-color: transparent;
         }
     }
 }

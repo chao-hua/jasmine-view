@@ -47,6 +47,10 @@ $--button-font-size: 14px;
 $--button-border-radius: $--border-radius-base;
 $--button-padding-vertical: 10px !default;
 $--button-padding-horizontal: 10px !default;
+$--button-padding-round-horizontal: 14px !default;
+$--button-padding-text-horizontal: 0 !default;
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
 
 $--button-default-color: $--color-text-regular !default;
 $--button-default-fill: $--color-white !default;
@@ -55,3 +59,23 @@ $--button-default-border-color: $--border-color-base !default;
 $--button-disabled-color: $--color-text-placeholder !default;
 $--button-disabled-fill: $--color-white !default;
 $--button-disabled-border-color: $--border-color-lighter !default;
+
+$--button-primary-color: $--color-white !default;
+$--button-primary-fill: $--color-primary !default;
+$--button-primary-border-color: $--color-primary !default;
+
+$--button-success-color: $--color-white !default;
+$--button-success-fill: $--color-success !default;
+$--button-success-border-color: $--color-success !default;
+
+$--button-warning-color: $--color-white !default;
+$--button-warning-fill: $--color-warning !default;
+$--button-warning-border-color: $--color-warning !default;
+
+$--button-danger-color: $--color-white !default;
+$--button-danger-fill: $--color-danger !default;
+$--button-danger-border-color: $--color-danger !default;
+
+$--button-info-color: $--color-white !default;
+$--button-info-fill: $--color-info !default;
+$--button-info-border-color: $--color-info !default;
