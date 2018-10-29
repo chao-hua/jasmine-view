@@ -72,6 +72,9 @@
             <js-button type="info" disabled>禁用</js-button>
             <js-button type="info" disabled plain>朴素禁用</js-button>
         </div>
+        <div class="row">
+            <js-button lang>长按钮</js-button>
+        </div>
     </div>
 </template>
 <script>

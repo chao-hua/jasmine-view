@@ -141,6 +141,39 @@
     &.is-plain {
         @include button-plain($background-color);
     }
+
+    &.is-click {
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            border-radius: inherit;
+            border: 0 solid rgba($background-color, .2);
+            animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
+            animation-fill-mode: forwards;
+            display: block;
+            pointer-events: none
+        }
+
+        @keyframes waveEffect {
+            100% {
+                top: -6px;
+                left: -6px;
+                bottom: -6px;
+                right: -6px;
+                border-width: 6px
+            }
+        }
+
+        @keyframes fadeEffect {
+            100% {
+                opacity: 0;
+            }
+        }
+    }
 }
 
 @mixin button-size($font-size, $border-radius, $padding-vertical, $padding-horizontal, $padding-round-horizontal:$padding-horizontal) {

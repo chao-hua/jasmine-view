@@ -1,10 +1,5 @@
 <template>
-    <button class="js-button" 
-    @click="handleClick" 
-    :disabled="buttonDisabled || loading" 
-    :autofocus="autofocus" 
-    :type="nativeType" 
-    :class="[
+    <button class="js-button" @click="handleClick" :disabled="buttonDisabled || loading" :autofocus="autofocus" :type="nativeType" :class="[
       type ? 'js-button--' + type : '',
       buttonSize ? 'js-button--' + buttonSize : '',
       {
@@ -12,7 +7,9 @@
         'is-loading': loading,
         'is-plain': plain,
         'is-round': round,
-        'is-circle': circle
+        'is-circle': circle,
+        'is-lang': lang,
+        'is-click': showClickAnimation,
       }
     ]">
         <i class="js-icon-loading" v-if="loading"></i>
@@ -42,7 +39,14 @@ export default {
         plain: Boolean,
         autofocus: Boolean,
         round: Boolean,
-        circle: Boolean
+        circle: Boolean,
+        lang: Boolean
+    },
+    data() {
+        return {
+            showClickAnimation: false,
+            time: ''
+        }
     },
 
     computed: {
@@ -57,6 +61,16 @@ export default {
     methods: {
         handleClick(e) {
             this.$emit('click', e);
+            this.showClickAnimation = true;
+            if (this.time) {
+                this.showClickAnimation = false;
+                clearTimeout(this.time);
+                this.time = '';
+            } else {
+                this.time = setTimeout(() => {
+                    this.showClickAnimation = false;
+                }, 2000);
+            }
         }
     }
 };
