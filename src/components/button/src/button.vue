@@ -44,8 +44,7 @@ export default {
     },
     data() {
         return {
-            showClickAnimation: false,
-            time: ''
+            showClickAnimation: false
         }
     },
 
@@ -60,18 +59,13 @@ export default {
 
     methods: {
         handleClick(e) {
-            this.$emit('click', e);
             this.showClickAnimation = true;
-            if (this.time) {
-                this.showClickAnimation = false;
-                clearTimeout(this.time);
-                this.time = '';
-            } else {
-                this.time = setTimeout(() => {
-                    this.showClickAnimation = false;
-                }, 2000);
-            }
         }
+    },
+    mounted() {
+        this.$el.addEventListener('animationend', () => {
+            this.showClickAnimation = false;
+        });
     }
 };
 </script>

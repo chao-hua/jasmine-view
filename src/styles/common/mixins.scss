@@ -151,8 +151,8 @@
             bottom: 0;
             right: 0;
             border-radius: inherit;
-            border: 0 solid rgba($background-color, .2);
-            animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
+            border: 0 solid rgba($background-color, .4);
+            animation: fadeEffect 1s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
             animation-fill-mode: forwards;
             display: block;
             pointer-events: none
