@@ -1,9 +1,11 @@
 import Button from './components/button';
+import ButtonGroup from './components/button-group';
 import Row from './components/row';
 import Col from './components/col';
 
 const components = {
     Button,
+    ButtonGroup,
     Row,
     Col,
 };

@@ -75,6 +75,28 @@
         <div class="row">
             <js-button lang>长按钮</js-button>
         </div>
+        <div class="row">
+            <js-button-group>
+                <js-button>按钮1</js-button>
+                <js-button>按钮2</js-button>
+                <js-button>按钮3</js-button>
+            </js-button-group>
+        </div>
+        <div class="row">
+            <js-button-group>
+                <js-button type="primary">按钮1</js-button>
+                <js-button type="primary">按钮2</js-button>
+            </js-button-group>
+        </div>
+        <div class="row">
+            <js-button-group>
+                <js-button type="primary">按钮1</js-button>
+                <js-button type="success">按钮2</js-button>
+                <js-button type="warning">按钮3</js-button>
+                <js-button type="danger">按钮4</js-button>
+                <js-button type="info">按钮5</js-button>
+            </js-button-group>
+        </div>
     </div>
 </template>
 <script>

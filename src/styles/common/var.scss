@@ -6,7 +6,7 @@ $--color-black: #000 !default;
 $--color-primary: #2d8cf0 !default;
 $--color-success: #19be6b !default;
 $--color-warning: #ff9900 !default;
-$--color-danger: #ed4014 !default;
+$--color-danger: #f56c6c !default;
 $--color-info: #909399 !default;
 
 $--color-primary-light: mix($--color-white, $--color-primary, 80%) !default;
@@ -26,7 +26,6 @@ $--color-text-regular: #606266 !default;
 $--color-text-secondary: #808695 !default;
 $--color-text-placeholder: #c5c8ce !default;
 
-
 /* Border
 -------------------------- */
 $--border-width-base: 1px !default;
@@ -42,7 +41,6 @@ $--border-base: $--border-width-base $--border-style-base $--border-color-base !
 
 /* Button
 -------------------------- */
-
 $--button-font-size: 14px;
 $--button-border-radius: $--border-radius-base;
 $--button-padding-vertical: 10px !default;
