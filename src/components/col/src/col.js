@@ -12,6 +12,11 @@ export default {
         offset: Number,
         pull: Number,
         push: Number,
+        xs: [Number, Object],
+        sm: [Number, Object],
+        md: [Number, Object],
+        lg: [Number, Object],
+        xl: [Number, Object],
     },
     computed: {
         gutter() {
@@ -36,6 +41,21 @@ export default {
                     `js-col-${item}-${this[item]}` :
                     `js-col-${this[item]}`
                 );
+            }
+        });
+
+        ['xs', 'sm', 'md', 'lg', 'xl'].forEach(item => {
+            if (typeof this[item] === 'number') {
+                classList.push(`js-col-${item}-${this[item]}`);
+            } else if (typeof this[item] === 'object') {
+                let props = this[item];
+                Object.keys(props).forEach(prop => {
+                    classList.push(
+                        prop !== 'span' ?
+                        `js-col-${item}-${prop}-${props[prop]}` :
+                        `js-col-${item}-${props[prop]}`
+                    );
+                });
             }
         });
 

@@ -3,14 +3,14 @@
 /* for BEM mixins
  --------------------- */
 
-@function selectorToString($selector) {
+@function fn-selectorToString($selector) {
     $selector: inspect($selector);
     @return #{$selector};
 }
 
 
-@function containsFlag($selector, $flag) {
-    $selector: selectorToString($selector);
+@function fn-containsFlag($selector, $flag) {
+    $selector: fn-selectorToString($selector);
 
     @if str-index($selector, $flag) {
         @return true;
@@ -21,18 +21,18 @@
     }
 }
 
-@function containsModifier($selector) {
-    @return containsFlag($selector, $modifier-separator);
+@function fn-containsModifier($selector) {
+    @return fn-containsFlag($selector, $modifier-separator);
 }
 
-@function containsState($selector) {
-    @return containsFlag($selector, '.'+ $state-prefix);
+@function fn-containsState($selector) {
+    @return fn-containsFlag($selector, '.'+ $state-prefix);
 }
 
-@function containsPseudo($selector) {
-    @return containsFlag($selector, ':');
+@function fn-containsPseudo($selector) {
+    @return fn-containsFlag($selector, ':');
 }
 
-@function hitAllSpecialNestRule($selector) {
-    @return containsModifier($selector) or containsState($selector) or containsPseudo($selector);
+@function fn-hitAllSpecialNestRule($selector) {
+    @return fn-containsModifier($selector) or fn-containsState($selector) or fn-containsPseudo($selector);
 }
