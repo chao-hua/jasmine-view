@@ -12,6 +12,7 @@ export default {
         offset: Number,
         pull: Number,
         push: Number,
+        p: [Number, Object],
         xs: [Number, Object],
         sm: [Number, Object],
         md: [Number, Object],
@@ -44,7 +45,7 @@ export default {
             }
         });
 
-        ['xs', 'sm', 'md', 'lg', 'xl'].forEach(item => {
+        ['p','xs', 'sm', 'md', 'lg', 'xl'].forEach(item => {
             if (typeof this[item] === 'number') {
                 classList.push(`js-col-${item}-${this[item]}`);
             } else if (typeof this[item] === 'object') {

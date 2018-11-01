@@ -30,6 +30,32 @@
     }
 }
 
+@include set-media(p) {
+    .js-col-p-0 {
+        display: none;
+    }
+
+    @for $i from 0 through 24 {
+        .js-col-p-#{$i} {
+            width: (1 / 24 * $i * 100) * 1%;
+        }
+
+        .js-col-p-offset-#{$i} {
+            margin-left: (1 / 24 * $i * 100) * 1%;
+        }
+
+        .js-col-p-pull-#{$i} {
+            position: relative;
+            right: (1 / 24 * $i * 100) * 1%;
+        }
+
+        .js-col-p-push-#{$i} {
+            position: relative;
+            left: (1 / 24 * $i * 100) * 1%;
+        }
+    }
+}
+
 @include set-media(xs) {
     .js-col-xs-0 {
         display: none;

@@ -45,13 +45,13 @@
             </js-col>
         </js-row>
         <js-row class="row">
-            <js-col class="item item-1" :xs="8" :sm="6" :md="4" :lg="2" :xl="1">
+            <js-col class="item item-1" :p="12" :xs="8" :sm="6" :md="4" :lg="2" :xl="1">
                 <div>js-col-1</div>
             </js-col>
-            <js-col class="item item-2" :xs="8" :sm="12" :md="16" :lg="20" :xl="22">
+            <js-col class="item item-2" :p="12" :xs="8" :sm="12" :md="16" :lg="20" :xl="22">
                 <div>js-col-2</div>
             </js-col>
-            <js-col class="item item-3" :xs="8" :sm="6" :md="4" :lg="2" :xl="1">
+            <js-col class="item item-3" :p="0" :xs="8" :sm="6" :md="4" :lg="2" :xl="1">
                 <div>js-col-3</div>
             </js-col>
         </js-row>
