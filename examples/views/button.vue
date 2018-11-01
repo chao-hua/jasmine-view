@@ -1,5 +1,5 @@
 <template>
-    <div id="button">
+    <div>
         <div class="row">
             <js-button @click="test">默认按钮</js-button>
             <js-button plain>朴素按钮</js-button>

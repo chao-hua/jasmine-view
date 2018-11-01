@@ -1,0 +1,8 @@
+@import '../../common/index.scss';
+
+@include b(main) {
+    flex: 1;
+    overflow: auto;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}

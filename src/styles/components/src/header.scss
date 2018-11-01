@@ -1,0 +1,7 @@
+@import '../../common/index.scss';
+
+@include b(footer) {
+    overflow: auto;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}

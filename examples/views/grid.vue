@@ -1,5 +1,5 @@
 <template>
-    <div id="col">
+    <div>
         <js-row class="row" :gutter="20">
             <js-col class="item item-1" :span="10">
                 <div>js-col-1</div>
@@ -61,26 +61,24 @@
 export default {}
 </script>
 <style lang="scss" scoped>
-#col {
-    .row {
-        margin: 10px 0;
-    }
+.row {
+    margin: 10px 0;
+}
 
-    .item div {
-        background-color: #9999CC;
-        border-radius: 4px;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 5px;
-        text-align: center;
-    }
+.item div {
+    background-color: #9999CC;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    text-align: center;
+}
 
-    .item-2 div {
-        background-color: rgba(#9999CC, .6);
-    }
+.item-2 div {
+    background-color: rgba(#9999CC, .6);
+}
 
-    .item-3 div {
-        background-color: rgba(#9999CC, .3);
-    }
+.item-3 div {
+    background-color: rgba(#9999CC, .3);
 }
 </style>

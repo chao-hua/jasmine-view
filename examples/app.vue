@@ -4,13 +4,13 @@
             <nav>
                 <ul>
                     <li>
+                        <router-link to="/grid">Grid</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/layout">Layout</router-link>
+                    </li>
+                    <li>
                         <router-link to="/button">Button</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/row">Row</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/col">Col</router-link>
                     </li>
                 </ul>
             </nav>

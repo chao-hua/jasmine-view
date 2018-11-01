@@ -11,22 +11,22 @@ export default new Router({
             component: Home
         },
         {
+            path: '/grid',
+            name: 'grid',
+            component: () =>
+                import ('./views/grid.vue')
+        },
+        {
+            path: '/layout',
+            name: 'layout',
+            component: () =>
+                import ('./views/layout.vue')
+        },
+                {
             path: '/button',
             name: 'button',
             component: () =>
                 import ('./views/button.vue')
-        },
-        {
-            path: '/row',
-            name: 'row',
-            component: () =>
-                import ('./views/row.vue')
-        },
-        {
-            path: '/col',
-            name: 'col',
-            component: () =>
-                import ('./views/col.vue')
         },
     ]
 })
