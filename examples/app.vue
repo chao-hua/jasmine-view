@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="container">
+            <home></home>
             <nav>
                 <ul>
                     <li>
@@ -18,9 +19,22 @@
         </div>
     </div>
 </template>
+<script>
+import Home from './views/home.vue'
+export default {
+    components: {
+        Home
+    },
+    methods: {
+        test() {
+            alert('回调函数');
+        }
+    }
+}
+</script>
 <style lang="scss" scoped>
 nav {
-    margin-bottom: 40px;
+    margin: 40px 0;
 
     ul {
         display: flex;
@@ -39,7 +53,7 @@ nav {
 }
 
 .container {
-    padding: 10px 40px 0;
+    padding: 0 40px;
 }
 
 .v-link-active {
