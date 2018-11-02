@@ -67,8 +67,8 @@ export default {
     },
     methods: {
         handleClick(e) {
-            this.$emit('click', e);
             this.showClickAnimation = true;
+            this.$emit('click', e);
         }
     },
     mounted() {
