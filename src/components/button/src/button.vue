@@ -19,6 +19,7 @@
 </template>
 <script>
 import { oneOf } from 'utils/util.js'
+import { on } from 'utils/dom.js'
 export default {
     name: 'JsButton',
     props: {
@@ -71,9 +72,9 @@ export default {
         }
     },
     mounted() {
-        this.$el.addEventListener('animationend', () => {
+        on(this.$el, 'animationend', () => {
             this.showClickAnimation = false;
         });
-    }
+    },
 };
 </script>
