@@ -1,9 +1,5 @@
 <template>
-    <button class="js-button" 
-    @click="handleClick" 
-    :disabled="buttonDisabled || loading" 
-    :autofocus="autofocus" :type="nativeType" 
-    :class="[
+    <button class="js-button" @click="handleClick" :disabled="buttonDisabled || loading" :autofocus="autofocus" :type="nativeType" :class="[
       type ? 'js-button--' + type : '',
       buttonSize ? 'js-button--' + buttonSize : '',
       {
@@ -22,14 +18,23 @@
     </button>
 </template>
 <script>
+import { oneOf } from 'utils/util.js'
 export default {
     name: 'JsButton',
     props: {
         type: {
             type: String,
-            default: 'default'
+            default: 'default',
+            validator(val) {
+                return oneOf(val, ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text']);
+            }
         },
-        size: String,
+        size: {
+            type: String,
+            validator(val) {
+                return oneOf(val, ['medium', 'small']);
+            }
+        },
         icon: {
             type: String,
             default: ''
@@ -51,7 +56,6 @@ export default {
             showClickAnimation: false
         }
     },
-
     computed: {
         buttonDisabled() {
             return this.disabled;
@@ -60,7 +64,6 @@ export default {
             return this.size;
         }
     },
-
     methods: {
         handleClick(e) {
             this.$emit('click', e);

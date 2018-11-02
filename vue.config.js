@@ -23,6 +23,7 @@ module.exports = {
             .set('@$', resolve('src'))
             .set('components', resolve('src/components'))
             .set('styles', resolve('src/styles'))
+            .set('utils', resolve('src/utils'))
             .set('examples', resolve('examples'))
             .set('docs', resolve('docs'));
         //打包文件带hash

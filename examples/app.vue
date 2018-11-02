@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <div class="container">
-            <home></home>
             <nav>
                 <ul>
                     <li>
@@ -20,11 +19,7 @@
     </div>
 </template>
 <script>
-import Home from './views/home.vue'
 export default {
-    components: {
-        Home
-    },
     methods: {
         test() {
             alert('回调函数');

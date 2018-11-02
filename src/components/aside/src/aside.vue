@@ -1,9 +1,11 @@
 <template>
     <aside class="js-aside" :style="{ width }">
+        {{clientWidth}}
         <slot></slot>
     </aside>
 </template>
 <script>
+import { oneOf } from 'utils/util.js'
 export default {
     name: 'JsAside',
     componentName: 'JsAside',
@@ -13,7 +15,16 @@ export default {
             default: '300px'
         },
         breakpoint: {
-            type: String
+            type: String,
+            validator(val) {
+                return oneOf(val, ['p', 'xs', 'sm', 'md', 'lg', 'xl']);
+            }
+        }
+    },
+    computed: {
+        clientWidth() {
+            console.log(document.body.clientWidth);
+            return document.body.clientWidth;
         }
     }
 };

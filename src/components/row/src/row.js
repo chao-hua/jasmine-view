@@ -1,3 +1,4 @@
+import { oneOf } from 'utils/util.js'
 export default {
     name: 'JsRow',
     componentName: 'JsRow',
@@ -11,15 +12,15 @@ export default {
         justify: {
             type: String,
             default: 'start',
-            validator: function(v) {
-                return ['start', 'end', 'center', 'space-between', 'space-around'].indexOf(v) !== -1
+            validator(val) {
+                return oneOf(val, ['start', 'end', 'center', 'space-between', 'space-around']);
             }
         },
         align: {
             type: String,
             default: 'start',
-            validator: function(v) {
-                return ['start', 'end', 'center', 'baseline', 'stretch'].indexOf(v) !== -1;
+            validator(val) {
+                return oneOf(val, ['start', 'end', 'center', 'baseline', 'stretch']);
             }
         }
     },
