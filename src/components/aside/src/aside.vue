@@ -23,7 +23,6 @@ export default {
     },
     computed: {
         clientWidth() {
-            console.log(document.body.clientWidth);
             return document.body.clientWidth;
         }
     }
