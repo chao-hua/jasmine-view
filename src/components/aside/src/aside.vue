@@ -19,7 +19,8 @@ export default {
             validator(val) {
                 return oneOf(val, ['p', 'xs', 'sm', 'md', 'lg', 'xl']);
             }
-        }
+        },
+        collapsible: Boolean
     },
     computed: {
         clientWidth() {
