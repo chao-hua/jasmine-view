@@ -12,12 +12,12 @@ export default {
         offset: Number,
         pull: Number,
         push: Number,
-        p: [Number, Object],
         xs: [Number, Object],
         sm: [Number, Object],
         md: [Number, Object],
         lg: [Number, Object],
         xl: [Number, Object],
+        xxl: [Number, Object],
     },
     computed: {
         gutter() {
@@ -45,7 +45,7 @@ export default {
             }
         });
 
-        ['p','xs', 'sm', 'md', 'lg', 'xl'].forEach(item => {
+        ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'].forEach(item => {
             if (typeof this[item] === 'number') {
                 classList.push(`js-col-${item}-${this[item]}`);
             } else if (typeof this[item] === 'object') {

@@ -72,7 +72,7 @@
         </div>
         <div class="row">
             <js-layout>
-                <js-aside class="aside" style="line-height: 300px;">aside</js-aside>
+                <js-aside class="aside" style="line-height: 300px;" breakpoint="md" collapsedWidth="150px" @breakpointTrigger="change">aside</js-aside>
                 <js-layout>
                     <js-header class="header">header</js-header>
                     <js-main class="main" style="line-height: 240px;">main</js-main>
@@ -82,7 +82,13 @@
     </div>
 </template>
 <script>
-export default {}
+export default {
+    methods:{
+        change(e){
+            console.log(e);
+        }
+    }
+}
 </script>
 <style lang="scss" scoped>
 * {

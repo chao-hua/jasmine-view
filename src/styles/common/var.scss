@@ -34,14 +34,12 @@ $--md: 992px !default;
 $--lg: 1200px !default;
 $--xl: 1920px !default;
 
-$--breakpoints: (
-  'p' : (max-width: $--xs),
-  'xs' : (min-width: $--xs),
-  'sm' : (min-width: $--sm),
-  'md' : (min-width: $--md),
-  'lg' : (min-width: $--lg),
-  'xl' : (min-width: $--xl)
-);
+$--breakpoints: ('xs' : (max-width: $--xs),
+'sm' : (min-width: $--xs),
+'md' : (min-width: $--sm),
+'lg' : (min-width: $--md),
+'xl' : (min-width: $--lg),
+'xxl' : (min-width: $--xl));
 
 /* Border
 -------------------------- */
