@@ -22,11 +22,17 @@ export default new Router({
             component: () =>
                 import ('./views/layout.vue')
         },
-                {
+        {
             path: '/button',
             name: 'button',
             component: () =>
                 import ('./views/button.vue')
+        },
+        {
+            path: '/radio',
+            name: 'radio',
+            component: () =>
+                import ('./views/radio.vue')
         },
     ]
 })

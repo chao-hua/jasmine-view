@@ -4,13 +4,16 @@
             <nav>
                 <ul>
                     <li>
-                        <router-link to="/grid">Grid</router-link>
+                        <router-link to="/layout">Layout 布局</router-link>
                     </li>
                     <li>
-                        <router-link to="/layout">Layout</router-link>
+                        <router-link to="/grid">Grid 栅格</router-link>
                     </li>
                     <li>
-                        <router-link to="/button">Button</router-link>
+                        <router-link to="/button">Button 按钮</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/radio">Radio 单选框</router-link>
                     </li>
                 </ul>
             </nav>
@@ -19,13 +22,7 @@
     </div>
 </template>
 <script>
-export default {
-    methods: {
-        test() {
-            alert('回调函数');
-        }
-    }
-}
+export default {}
 </script>
 <style lang="scss" scoped>
 nav {

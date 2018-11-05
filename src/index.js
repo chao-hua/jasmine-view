@@ -7,6 +7,7 @@ import Layout from './components/layout';
 import Footer from './components/footer';
 import Header from './components/header';
 import Main from './components/main';
+import Radio from './components/radio';
 
 const components = {
     Button,
@@ -18,6 +19,7 @@ const components = {
     Footer,
     Header,
     Main,
+    Radio,
 };
 
 const install = function(Vue) {
