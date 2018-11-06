@@ -1,5 +1,11 @@
 <template>
-    <label>
+    <label class="js-radio" 
+    :class="[
+    border && radioSize ? 'js-radio--' + radioSize : '',
+    {'is-disabled':}
+    ]"
+
+    >
         <input type="radio">
         ceshi
     </label>
