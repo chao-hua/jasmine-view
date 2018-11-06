@@ -10,22 +10,35 @@ import { on } from 'utils/dom.js'
 export default {
     name: 'JsRadio',
     props: {
-        value:{},
+        value: {},
         label: {},
+        name: String,
         disabled: Boolean,
+        size: {
+            type: String,
+            validator(val) {
+                return oneOf(val, ['medium', 'small']);
+            }
+        },
+        border: Boolean
     },
     data() {
         return {
-            showClickAnimation: false
+            focus: false
         }
     },
     computed: {
-        buttonDisabled() {
+        isGroup() {
+            return false;
+        },
+        model() {},
+        isDisabled() {
             return this.disabled;
         },
-        buttonSize() {
+        radioSize() {
             return this.size;
-        }
+        },
+        tabIndex() {}
     },
     methods: {
         handleClick(e) {
