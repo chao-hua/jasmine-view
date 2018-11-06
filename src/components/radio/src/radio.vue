@@ -1,5 +1,8 @@
 <template>
-    <input type="radio">
+    <label>
+        <input type="radio">
+        ceshi
+    </label>
 </template>
 <script>
 import { oneOf } from 'utils/util.js'
@@ -7,9 +10,8 @@ import { on } from 'utils/dom.js'
 export default {
     name: 'JsRadio',
     props: {
-        label: {
-            type: String,
-        },
+        value:{},
+        label: {},
         disabled: Boolean,
     },
     data() {
@@ -32,9 +34,7 @@ export default {
         }
     },
     mounted() {
-        on(this.$el, 'animationend', () => {
-            this.showClickAnimation = false;
-        });
+        console.log(this.value)
     },
 };
 </script>

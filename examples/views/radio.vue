@@ -1,10 +1,17 @@
 <template>
     <div>
-        <js-radio class="js-radio"></js-radio>
+        <js-radio v-model="gender" label="m">男</js-radio>
+        <js-radio v-model="gender" label="w">女</js-radio>
     </div>
 </template>
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            gender: true
+        }
+    }
+}
 </script>
 <style lang="scss" scoped>
 .row {

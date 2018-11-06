@@ -1,9 +1,9 @@
 <template>
-    <button class="js-button" @click="handleClick" :disabled="buttonDisabled || loading" :autofocus="autofocus" :type="nativeType" :class="[
+    <button class="js-button" @click="handleClick" :disabled="isDisabled || loading" :autofocus="autofocus" :type="nativeType" :class="[
       type ? 'js-button--' + type : '',
       buttonSize ? 'js-button--' + buttonSize : '',
       {
-        'is-disabled': buttonDisabled,
+        'is-disabled': isDisabled,
         'is-loading': loading,
         'is-plain': plain,
         'is-round': round,
@@ -58,7 +58,7 @@ export default {
         }
     },
     computed: {
-        buttonDisabled() {
+        isDisabled() {
             return this.disabled;
         },
         buttonSize() {
