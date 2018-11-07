@@ -139,3 +139,24 @@ $--radio-disabled-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-input-fill: $--disabled-fill-base !default;
 $--radio-disabled-inner-color: $--disabled-fill-base !default;
 $--radio-disabled-checked-inner-color: $--disabled-color-base !default;
+
+$--radio-button-border: $--border-base !default;
+$--radio-button-checked-fill: $--color-primary !default;
+$--radio-button-checked-color: $--color-white !default;
+$--radio-button-checked-border-color: $--color-primary !default;
+$--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
+
+$--radio-button-font-size: 14px !default;
+$--radio-button-border-radius: $--border-radius-base !default;
+$--radio-button-padding-vertical: 10px !default;
+$--radio-button-padding-horizontal: 10px !default;
+
+$--radio-button-medium-font-size: 14px !default;
+$--radio-button-medium-border-radius: $--border-radius-base !default;
+$--radio-button-medium-padding-vertical: 8px !default;
+$--radio-button-medium-padding-horizontal: 8px !default;
+
+$--radio-button-small-font-size: 12px !default;
+$--radio-button-small-border-radius: #{$--border-radius-base - 1} !default;
+$--radio-button-small-padding-vertical: 6px !default;
+$--radio-button-small-padding-horizontal: 6px !default;

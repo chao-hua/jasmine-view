@@ -24,6 +24,7 @@ module.exports = {
             .set('components', resolve('src/components'))
             .set('styles', resolve('src/styles'))
             .set('utils', resolve('src/utils'))
+            .set('mixins', resolve('src/mixins'))
             .set('examples', resolve('examples'))
             .set('docs', resolve('docs'));
         //打包文件带hash

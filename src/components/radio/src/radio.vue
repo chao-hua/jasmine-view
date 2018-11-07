@@ -17,9 +17,11 @@
 </template>
 <script>
 import { oneOf } from 'utils/util.js'
+import Emitter from 'mixins/emitter.js'
 export default {
     name: 'JsRadio',
     componentName: 'JsRadio',
+    mixins: [Emitter],
     props: {
         value: {},
         label: {},
@@ -44,7 +46,7 @@ export default {
                 if (parent.$options.componentName !== 'JsRadioGroup') {
                     parent = parent.$parent;
                 } else {
-                    this._radioParent = parent;
+                    this._radioGroup = parent;
                     return true;
                 }
             }
@@ -52,11 +54,11 @@ export default {
         },
         model: {
             get() {
-                return this.isGroup ? this._radioParent.value : this.value;
+                return this.isGroup ? this._radioGroup.value : this.value;
             },
             set(val) {
                 if (this.isGroup) {
-                    // TODO
+                    this.dispatch('JsRadioGroup', 'input', val);
                 } else {
                     this.$emit('input', val);
                 }
@@ -65,16 +67,16 @@ export default {
         isDisabled() {
             return this.isGroup ? this._radioGroup.disabled || this.disabled : this.disabled;
         },
-        radioSize() {
-            return this.isGroup ? this._radioGroup.size || this.size : this.size;
-        },
         tabIndex() {
             return this.isDisabled ? -1 : (this.isGroup ? (this.model === this.label ? 0 : -1) : 0);
         }
     },
     methods: {
-        handelChange(e) {
-            this.$emit('change', this.model);
+        handelChange() {
+            this.$nextTick(() => {
+                this.$emit('change', this.model);
+                this.isGroup && this.dispatch('JsRadioGroup', 'change', this.model);
+            });
         }
     }
 };

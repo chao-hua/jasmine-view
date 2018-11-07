@@ -8,12 +8,12 @@
     color: $--radio-color;
     line-height: 1;
     white-space: nowrap;
+    margin-right: 30px;
     @include utils-font-size($--radio-font-size);
     @include utils-user-select(none);
 
-    // TODO
-    &+& {
-        margin-left: 30px;
+    &:last-child {
+        margin-right: 0;
     }
 
     @include e(input) {
