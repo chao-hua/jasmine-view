@@ -1,3 +1,128 @@
 @import '../../common/index.scss';
 
-@include b(radio) {}
+@include b(radio) {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    color: $--radio-color;
+    line-height: 1;
+    white-space: nowrap;
+    @include utils-font-size($--radio-font-size);
+    @include utils-user-select(none);
+
+    // TODO
+    &+& {
+        margin-left: 30px;
+    }
+
+    @include e(input) {
+        white-space: nowrap;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        vertical-align: middle;
+
+        @include when(disabled) {
+            cursor: not-allowed;
+
+            .js-radio__inner {
+                border-color: $--radio-disabled-input-border-color;
+                background: $--radio-disabled-input-fill;
+                cursor: not-allowed;
+
+                &::after {
+                    cursor: not-allowed;
+                    background-color: $--radio-disabled-inner-color;
+                }
+            }
+
+            &+.js-radio__label {
+                color: $--radio-disabled-text-color;
+                cursor: not-allowed;
+            }
+
+            &.is-checked {
+                .js-radio__inner {
+                    border-color: $--radio-disabled-input-border-color;
+                    background: $--radio-disabled-input-fill;
+                    cursor: not-allowed;
+
+                    &::after {
+                        cursor: not-allowed;
+                        background-color: $--radio-disabled-checked-inner-color;
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                }
+
+                &+.js-radio__label {
+                    cursor: not-allowed;
+                    color: $--radio-disabled-text-color;
+                }
+            }
+        }
+
+        @include when(checked) {
+            .js-radio__inner {
+                border-color: $--radio-checked-input-border-color;
+                background: $--radio-checked-input-fill;
+
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+
+            &+.js-radio__label {
+                color: $--radio-checked-text-color;
+            }
+        }
+    }
+
+    @include e(inner) {
+        border: $--radio-input-border;
+        border-radius: $--radio-input-border-radius;
+        width: $--radio-input-width;
+        height: $--radio-input-height;
+        background-color: $--radio-input-fill;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+
+        &:hover {
+            border-color: $--radio-input-border-color-hover;
+        }
+
+        &::after {
+            width: 8px;
+            height: 8px;
+            border-radius: $--radio-input-border-radius;
+            background-color: $--radio-checked-inner-color;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform .15s ease-in;
+        }
+    }
+
+    @include e(original) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        outline: none;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    @include e(label) {
+        padding-left: 6px;
+        @include utils-font-size($--radio-font-size);
+    }
+}

@@ -46,6 +46,8 @@ $--breakpoints: ('xs' : (max-width: $--xs),
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-circle: 100% !default;
 
 $--border-color-base: #c5c8ce !default;
 $--border-color-light: #dcdfe6 !default;
@@ -54,10 +56,20 @@ $--border-color-extra-light: #ebeef5 !default;
 
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 
+/* Background
+-------------------------- */
+$--background-color-base: #f5f5f5 !default;
+
+/* Disable base
+-------------------------- */
+$--disabled-fill-base: $--background-color-base !default;
+$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-border-base: $--border-color-light !default;
+
 /* Button
 -------------------------- */
-$--button-font-size: 14px;
-$--button-border-radius: $--border-radius-base;
+$--button-font-size: 14px !default;
+$--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 10px !default;
 $--button-padding-horizontal: 10px !default;
 $--button-padding-round-horizontal: 14px !default;
@@ -81,9 +93,9 @@ $--button-default-color: $--color-text-regular !default;
 $--button-default-fill: $--color-white !default;
 $--button-default-border-color: $--border-color-base !default;
 
-$--button-disabled-color: $--color-text-placeholder !default;
-$--button-disabled-fill: $--color-white !default;
-$--button-disabled-border-color: $--border-color-lighter !default;
+$--button-disabled-color: $--disabled-color-base !default;
+$--button-disabled-fill: $--disabled-fill-base !default;
+$--button-disabled-border-color: $--disabled-border-base !default;
 
 $--button-primary-color: $--color-white !default;
 $--button-primary-fill: $--color-primary !default;
@@ -104,3 +116,26 @@ $--button-danger-border-color: $--color-danger !default;
 $--button-info-color: $--color-white !default;
 $--button-info-fill: $--color-info !default;
 $--button-info-border-color: $--color-info !default;
+
+/* Radio
+-------------------------- */
+$--radio-font-size: 14px !default;
+$--radio-color: $--color-text-regular !default;
+$--radio-input-height: 14px !default;
+$--radio-input-width: 14px !default;
+$--radio-input-border-radius: $--border-radius-circle !default;
+$--radio-input-fill: $--color-white !default;
+$--radio-input-border: $--border-base !default;
+
+$--radio-checked-text-color: $--color-primary !default;
+$--radio-checked-input-border-color: $--color-primary !default;
+$--radio-checked-input-fill: $--color-white !default;
+$--radio-checked-inner-color: $--color-primary !default;
+
+$--radio-input-border-color-hover: $--color-primary !default;
+
+$--radio-disabled-text-color: $--disabled-color-base !default;
+$--radio-disabled-input-border-color: $--disabled-border-base !default;
+$--radio-disabled-input-fill: $--disabled-fill-base !default;
+$--radio-disabled-inner-color: $--disabled-fill-base !default;
+$--radio-disabled-checked-inner-color: $--disabled-color-base !default;

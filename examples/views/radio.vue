@@ -1,14 +1,23 @@
 <template>
     <div>
-        <js-radio v-model="gender" label="m">男</js-radio>
-        <js-radio v-model="gender" label="w">女</js-radio>
+        <div class="row">
+            <js-radio v-model="item" label="item1" @change="handelChange">选项1</js-radio>
+            <js-radio v-model="item" label="item2" @change="handelChange">选项2</js-radio>
+            <js-radio v-model="item" label="item2" @change="handelChange" disabled>选项3</js-radio>
+            <js-radio v-model="item" label="item4" @change="handelChange" disabled>选项4</js-radio>
+        </div>
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            gender: true
+            item: 'item4'
+        }
+    },
+    methods: {
+        handelChange(val) {
+            console.log(val);
         }
     }
 }
