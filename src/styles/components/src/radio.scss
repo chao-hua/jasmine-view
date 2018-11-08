@@ -26,8 +26,6 @@
         vertical-align: middle;
 
         @include when(disabled) {
-
-
             .js-radio__inner {
                 border-color: $--radio-disabled-input-border-color;
                 background: $--radio-disabled-input-fill;
