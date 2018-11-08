@@ -26,7 +26,7 @@
         vertical-align: middle;
 
         @include when(disabled) {
-            cursor: not-allowed;
+
 
             .js-radio__inner {
                 border-color: $--radio-disabled-input-border-color;
@@ -124,5 +124,100 @@
     @include e(label) {
         padding-left: 6px;
         @include utils-font-size($--radio-font-size);
+    }
+
+    @include when(disabled) {
+        cursor: not-allowed;
+    }
+
+    @include when(button) {
+        float: left;
+        border: $--radio-button-border;
+        @include button-size($--radio-button-font-size, $--radio-button-border-radius, $--radio-button-padding-vertical, $--radio-button-padding-horizontal);
+
+        &+.js-radio {
+            margin-left: 0;
+        }
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+            z-index: 1;
+            border-color: $--radio-button-border-color-hover;
+
+            .js-radio__label {
+                color: $--radio-button-text-color-hover;
+            }
+        }
+
+        .js-radio__input {
+            display: none;
+        }
+
+        .js-radio__label {
+            padding-left: 0;
+        }
+
+        @include when(disabled) {
+            background: $--radio-button-disabled-fill;
+            &:focus,
+            &:hover,
+            &:active {
+                border-color: $--radio-button-disabled-border-color-hover;
+
+                .js-radio__label {
+                    color: $--radio-disabled-text-color;
+                }
+            }
+        }
+
+        @include when(checked) {
+            border-color: $--radio-button-checked-border-color;
+            background: $--radio-button-checked-fill;
+            transition: all .3s cubic-bezier(.645, .045, .355, 1);
+
+            .js-radio__label {
+                color: $--radio-button-checked-color;
+            }
+
+            &.is-disabled {
+                border-color: $--radio-button-disabled-checked-border-color;
+                background: $--radio-button-disabled-checked-fill;
+
+                .js-radio__label {
+                    color: $--radio-button-disabled-checked-text-color;
+                }
+            }
+        }
+    }
+
+    @include m(medium) {
+        &.is-button {
+            @include button-size($--radio-button-medium-font-size, $--radio-button-medium-border-radius, $--radio-button-medium-padding-vertical, $--radio-button-medium-padding-horizontal);
+        }
+    }
+
+    @include m(small) {
+        &.is-button {
+            @include button-size($--radio-button-small-font-size, $--radio-button-small-border-radius, $--radio-button-small-padding-vertical, $--radio-button-small-padding-horizontal);
+        }
     }
 }

@@ -1,7 +1,5 @@
 <template>
     <div class="js-radio-group" :class="[
-    button && radioSize ? 'el-radio-group--' + radioSize : '',
-    {'is-button': button},
     {'is-vertical': vertical},
     ]" role="radiogroup">
         <slot></slot>

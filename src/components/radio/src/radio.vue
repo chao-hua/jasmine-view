@@ -1,6 +1,8 @@
 <template>
     <label class="js-radio" :class="[
+        isButton && radioSize ? 'js-radio--' + radioSize : '',
         {'is-disabled': isDisabled},
+        {'is-button': isButton},
         {'is-focus': focus},
         {'is-checked': model === label},
     ]" role="radio" :aria-checked="model === label" :aria-disabled="isDisabled" :tabindex="tabIndex">
@@ -26,13 +28,7 @@ export default {
         value: {},
         label: {},
         name: String,
-        disabled: Boolean,
-        size: {
-            type: String,
-            validator(val) {
-                return oneOf(val, ['medium', 'small']);
-            }
-        }
+        disabled: Boolean
     },
     data() {
         return {
@@ -69,6 +65,12 @@ export default {
         },
         tabIndex() {
             return this.isDisabled ? -1 : (this.isGroup ? (this.model === this.label ? 0 : -1) : 0);
+        },
+        radioSize() {
+            return this.isGroup ? this._radioGroup.size || '' : '';
+        },
+        isButton() {
+            return this.isGroup ? this._radioGroup.button || '' : '';
         }
     },
     methods: {

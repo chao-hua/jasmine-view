@@ -144,7 +144,15 @@ $--radio-button-border: $--border-base !default;
 $--radio-button-checked-fill: $--color-primary !default;
 $--radio-button-checked-color: $--color-white !default;
 $--radio-button-checked-border-color: $--color-primary !default;
-$--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
+
+$--radio-button-disabled-fill: $--disabled-fill-base !default;
+$--radio-button-disabled-checked-fill: $--color-primary-lighter !default;
+$--radio-button-disabled-checked-border-color: $--border-color-base !default;
+$--radio-button-disabled-checked-text-color: $--disabled-color-base !default;
+
+$--radio-button-text-color-hover: $--color-primary !default;
+$--radio-button-border-color-hover: $--color-primary !default;
+$--radio-button-disabled-border-color-hover: $--border-color-base !default;
 
 $--radio-button-font-size: 14px !default;
 $--radio-button-border-radius: $--border-radius-base !default;
