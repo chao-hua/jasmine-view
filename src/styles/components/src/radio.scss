@@ -160,9 +160,6 @@
         &:focus,
         &:hover,
         &:active {
-            z-index: 1;
-            border-color: $--radio-button-border-color-hover;
-
             .js-radio__label {
                 color: $--radio-button-text-color-hover;
             }
@@ -178,11 +175,10 @@
 
         @include when(disabled) {
             background: $--radio-button-disabled-fill;
+
             &:focus,
             &:hover,
             &:active {
-                border-color: $--radio-button-disabled-border-color-hover;
-
                 .js-radio__label {
                     color: $--radio-disabled-text-color;
                 }
@@ -190,6 +186,7 @@
         }
 
         @include when(checked) {
+            z-index: 1;
             border-color: $--radio-button-checked-border-color;
             background: $--radio-button-checked-fill;
             transition: all .3s cubic-bezier(.645, .045, .355, 1);
