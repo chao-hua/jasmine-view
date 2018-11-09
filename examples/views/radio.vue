@@ -84,7 +84,7 @@ export default {
         },
         handelChange5(val) {
             console.log('handelChange5：' + val);
-        },
+        }
     }
 }
 </script>
