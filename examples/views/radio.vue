@@ -39,7 +39,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio6" disabled button>
+            <js-radio-group v-model="radio6" @change="handelChange6" disabled button>
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -47,7 +47,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio7" vertical>
+            <js-radio-group v-model="radio7" @change="handelChange7" vertical>
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -84,7 +84,13 @@ export default {
         },
         handelChange5(val) {
             console.log('handelChange5：' + val);
-        }
+        },
+        handelChange6(val) {
+            console.log('handelChange6：' + val);
+        },
+        handelChange7(val) {
+            console.log('handelChange7：' + val);
+        },
     }
 }
 </script>
