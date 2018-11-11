@@ -66,7 +66,7 @@ export default {
             radio4: 'item4',
             radio5: 'item4',
             radio6: 'item4',
-            radio7: 'item4',
+            radio7: 'item4'
         }
     },
     methods: {
@@ -90,7 +90,7 @@ export default {
         },
         handelChange7(val) {
             console.log('handelChange7：' + val);
-        },
+        }
     }
 }
 </script>
