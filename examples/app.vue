@@ -15,6 +15,9 @@
                     <li>
                         <router-link to="/radio">Radio 单选框</router-link>
                     </li>
+                    <li>
+                        <router-link to="/checkbox">Checkbox 复选框</router-link>
+                    </li>
                 </ul>
             </nav>
             <router-view></router-view>

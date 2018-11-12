@@ -34,5 +34,11 @@ export default new Router({
             component: () =>
                 import ('./views/radio.vue')
         },
+        {
+            path: '/checkbox',
+            name: 'checkbox',
+            component: () =>
+                import ('./views/checkbox.vue')
+        },
     ]
 })
