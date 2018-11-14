@@ -7,7 +7,11 @@
         {'is-checked': isChecked},
     ]" role="checkbox" :aria-checked="isChecked" :aria-disabled="isDisabled" :tabindex="tabIndex">
         <span class="js-checkbox__input"
-        :class="{'is-disabled': isDisabled, 'is-checked': isChecked}">
+        :class="{
+            'is-disabled': isDisabled, 
+            'is-checked': isChecked, 
+            'is-indeterminate': indeterminate
+        }">
             <span class="js-checkbox__inner"></span>
         <input type="checkbox" class="js-checkbox__original" :value="label" aria-hidden="true" v-model="model" @focus="focus = true" @blur="focus = false" @change="handelChange" :name="name" :disabled="isDisabled" tabindex="-1">
         </span>
@@ -18,7 +22,6 @@
     </label>
 </template>
 <script>
-import { oneOf } from 'utils/util.js'
 import Emitter from 'mixins/emitter.js'
 export default {
     name: 'JsCheckbox',
@@ -29,6 +32,7 @@ export default {
         label: {},
         name: String,
         disabled: Boolean,
+        indeterminate: Boolean,
     },
     data() {
         return {
@@ -72,7 +76,7 @@ export default {
             } else if (Array.isArray(this.model)) {
                 return this.model.indexOf(this.label) > -1;
             }
-            // TODO
+            // TODO trueLabel
         },
         isDisabled() {
             return this.isGroup ? this._checkboxGroup.disabled || this.disabled : this.disabled;
