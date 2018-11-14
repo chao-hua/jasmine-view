@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="row">
-            <js-radio v-model="radio1" label="item1" @change="handelChange1">选项1</js-radio>
-            <js-radio v-model="radio1" label="item2" @change="handelChange1">选项2</js-radio>
-            <js-radio v-model="radio1" label="item3" @change="handelChange1" disabled>选项3</js-radio>
-            <js-radio v-model="radio1" label="item4" @change="handelChange1" disabled>选项4</js-radio>
+            <js-radio v-model="radio1" label="item1" @change="handleChange1">选项1</js-radio>
+            <js-radio v-model="radio1" label="item2" @change="handleChange1">选项2</js-radio>
+            <js-radio v-model="radio1" label="item3" @change="handleChange1" disabled>选项3</js-radio>
+            <js-radio v-model="radio1" label="item4" @change="handleChange1" disabled>选项4</js-radio>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio2" @change="handelChange2">
+            <js-radio-group v-model="radio2" @change="handleChange2">
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -15,7 +15,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio3" @change="handelChange3" button>
+            <js-radio-group v-model="radio3" @change="handleChange3" button>
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -23,7 +23,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio4" @change="handelChange4" button size="medium">
+            <js-radio-group v-model="radio4" @change="handleChange4" button size="medium">
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -31,7 +31,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio5" @change="handelChange5" button size="small">
+            <js-radio-group v-model="radio5" @change="handleChange5" button size="small">
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -39,7 +39,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio6" @change="handelChange6" disabled button>
+            <js-radio-group v-model="radio6" @change="handleChange6" disabled button>
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -47,7 +47,7 @@
             </js-radio-group>
         </div>
         <div class="row">
-            <js-radio-group v-model="radio7" @change="handelChange7" vertical>
+            <js-radio-group v-model="radio7" @change="handleChange7" vertical>
                 <js-radio label="item1">选项1</js-radio>
                 <js-radio label="item2">选项2</js-radio>
                 <js-radio label="item3" disabled>选项3</js-radio>
@@ -70,26 +70,26 @@ export default {
         }
     },
     methods: {
-        handelChange1(val) {
-            console.log('handelChange1：' + val);
+        handleChange1(val) {
+            console.log('handleChange1：' + val);
         },
-        handelChange2(val) {
-            console.log('handelChange2：' + val);
+        handleChange2(val) {
+            console.log('handleChange2：' + val);
         },
-        handelChange3(val) {
-            console.log('handelChange3：' + val);
+        handleChange3(val) {
+            console.log('handleChange3：' + val);
         },
-        handelChange4(val) {
-            console.log('handelChange4：' + val);
+        handleChange4(val) {
+            console.log('handleChange4：' + val);
         },
-        handelChange5(val) {
-            console.log('handelChange5：' + val);
+        handleChange5(val) {
+            console.log('handleChange5：' + val);
         },
-        handelChange6(val) {
-            console.log('handelChange6：' + val);
+        handleChange6(val) {
+            console.log('handleChange6：' + val);
         },
-        handelChange7(val) {
-            console.log('handelChange7：' + val);
+        handleChange7(val) {
+            console.log('handleChange7：' + val);
         }
     }
 }
