@@ -10,6 +10,7 @@ import Main from './components/main';
 import Radio from './components/radio';
 import RadioGroup from './components/radio-group';
 import Checkbox from './components/checkbox';
+import CheckboxGroup from './components/checkbox-group';
 
 const components = {
     Button,
@@ -23,7 +24,8 @@ const components = {
     Main,
     Radio,
     RadioGroup,
-    Checkbox
+    Checkbox,
+    CheckboxGroup
 };
 
 const install = function(Vue) {
