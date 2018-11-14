@@ -1,5 +1,21 @@
 <template>
-    <input type="checkbox">
+    <label class="js-checkbox" :class="[
+        isButton && checkboxSize ? 'js-checkbox--' + checkboxSize : '',
+        {'is-disabled': isDisabled},
+        {'is-button': isButton},
+        {'is-focus': focus},
+        {'is-checked': isChecked},
+    ]" role="checkbox" :aria-checked="isChecked" :aria-disabled="isDisabled" :tabindex="tabIndex">
+        <span class="js-checkbox__input"
+        :class="{'is-disabled': isDisabled, 'is-checked': isChecked}">
+            <span class="js-checkbox__inner"></span>
+        <input type="checkbox" class="js-checkbox__original" :value="label" aria-hidden="true" v-model="model" @focus="focus = true" @blur="focus = false" @change="handelChange" :name="name" :disabled="isDisabled" tabindex="-1">
+        </span>
+        <span class="js-checkbox__label">
+            <slot></slot>
+            <template v-if="!$slots.default">{{ label }}</template>
+        </span>
+    </label>
 </template>
 <script>
 import { oneOf } from 'utils/util.js'
@@ -12,21 +28,22 @@ export default {
         value: {},
         label: {},
         name: String,
-        disabled: Boolean
+        disabled: Boolean,
     },
     data() {
         return {
-            focus: false
+            focus: false,
+            isLimited: false
         }
     },
     computed: {
         isGroup() {
             let parent = this.$parent;
             while (parent) {
-                if (parent.$options.componentName !== 'JsRadioGroup') {
+                if (parent.$options.componentName !== 'JsCheckboxGroup') {
                     parent = parent.$parent;
                 } else {
-                    this._radioGroup = parent;
+                    this._checkboxGroup = parent;
                     return true;
                 }
             }
@@ -34,36 +51,50 @@ export default {
         },
         model: {
             get() {
-                return this.isGroup ? this._radioGroup.value : this.value;
+                return this.isGroup ? this._checkboxGroup.value : this.value;
             },
             set(val) {
                 if (this.isGroup) {
-                    this.dispatch('JsRadioGroup', 'input', val);
+                    this.isLimited = false;
+                    if (this._checkboxGroup.min !== undefined && val.length < this._checkboxGroup.min)
+                        this.isLimited = true;
+                    if (this._checkboxGroup.max !== undefined && val.length > this._checkboxGroup.max)
+                        this.isLimited = true;
+                    !this.isLimited && this.dispatch('JsCheckboxGroup', 'input', val);
                 } else {
                     this.$emit('input', val);
                 }
             }
         },
+        isChecked() {
+            if (Object.prototype.toString.call(this.model) === '[object Boolean]') {
+                return this.model;
+            } else if (Array.isArray(this.model)) {
+                return this.model.indexOf(this.label) > -1;
+            }
+            // TODO
+        },
         isDisabled() {
-            return this.isGroup ? this._radioGroup.disabled || this.disabled : this.disabled;
+            return this.isGroup ? this._checkboxGroup.disabled || this.disabled : this.disabled;
         },
         tabIndex() {
             return this.isDisabled ? -1 : (this.isGroup ? (this.model === this.label ? 0 : -1) : 0);
         },
-        radioSize() {
-            return this.isGroup ? this._radioGroup.size || '' : '';
+        checkboxSize() {
+            return this.isGroup ? this._checkboxGroup.size || '' : '';
         },
         isButton() {
-            return this.isGroup ? this._radioGroup.button || '' : '';
+            return this.isGroup ? this._checkboxGroup.button || '' : '';
         }
     },
     methods: {
-        handelChange() {
+        handelChange(ev) {
+            if (this.isLimited) return;
             this.$nextTick(() => {
-                this.$emit('change', this.model);
-                this.isGroup && this.dispatch('JsRadioGroup', 'change', this.model);
+                this.$emit('change', ev.target.checked, this.model);
+                this.isGroup && this.dispatch('JsCheckboxGroup', 'change', this.model);
             });
         }
-    }
+    },
 };
 </script>

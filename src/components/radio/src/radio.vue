@@ -18,7 +18,6 @@
     </label>
 </template>
 <script>
-import { oneOf } from 'utils/util.js'
 import Emitter from 'mixins/emitter.js'
 export default {
     name: 'JsRadio',

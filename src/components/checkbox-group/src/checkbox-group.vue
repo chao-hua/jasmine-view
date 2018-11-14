@@ -1,69 +1,34 @@
 <template>
-    <input type="checkbox">
+    <div class="js-checkbox-group" :class="[
+    {'is-vertical': vertical},
+    ]" role="checkboxgroup">
+        <slot></slot>
+    </div>
 </template>
 <script>
 import { oneOf } from 'utils/util.js'
-import Emitter from 'mixins/emitter.js'
 export default {
     name: 'JsCheckboxGroup',
     componentName: 'JsCheckboxGroup',
-    mixins: [Emitter],
     props: {
         value: {},
-        label: {},
-        name: String,
-        disabled: Boolean
-    },
-    data() {
-        return {
-            focus: false
-        }
+        size: {
+            type: String,
+            validator(val) {
+                return oneOf(val, ['medium', 'small']);
+            }
+        },
+        disabled: Boolean,
+        button: Boolean,
+        vertical: Boolean,
+        min: Number,
+        max: Number,
     },
     computed: {
-        isGroup() {
-            let parent = this.$parent;
-            while (parent) {
-                if (parent.$options.componentName !== 'JsRadioGroup') {
-                    parent = parent.$parent;
-                } else {
-                    this._radioGroup = parent;
-                    return true;
-                }
-            }
-            return false;
-        },
-        model: {
-            get() {
-                return this.isGroup ? this._radioGroup.value : this.value;
-            },
-            set(val) {
-                if (this.isGroup) {
-                    this.dispatch('JsRadioGroup', 'input', val);
-                } else {
-                    this.$emit('input', val);
-                }
-            }
-        },
-        isDisabled() {
-            return this.isGroup ? this._radioGroup.disabled || this.disabled : this.disabled;
-        },
-        tabIndex() {
-            return this.isDisabled ? -1 : (this.isGroup ? (this.model === this.label ? 0 : -1) : 0);
-        },
-        radioSize() {
-            return this.isGroup ? this._radioGroup.size || '' : '';
-        },
-        isButton() {
-            return this.isGroup ? this._radioGroup.button || '' : '';
+        checkboxSize() {
+            return this.size;
         }
     },
-    methods: {
-        handelChange() {
-            this.$nextTick(() => {
-                this.$emit('change', this.model);
-                this.isGroup && this.dispatch('JsRadioGroup', 'change', this.model);
-            });
-        }
-    }
+    methods: {}
 };
 </script>
