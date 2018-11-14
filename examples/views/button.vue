@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <js-button @click="test">默认按钮</js-button>
+            <js-button @click="handleClick">默认按钮</js-button>
             <js-button plain>朴素按钮</js-button>
             <js-button round>圆角按钮</js-button>
             <js-button circle>圆</js-button>
@@ -102,7 +102,7 @@
 <script>
 export default {
     methods: {
-        test() {
+        handleClick() {
             alert('回调函数');
         }
     }
