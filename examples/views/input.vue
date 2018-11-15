@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <js-input v-model="input1" @change="handleChange1" @input="handleInput1" @focus="handleFocus1" @blur="handleBlur1"></js-input>
+            <js-input v-model="input1" @change="handleChange1" @input="handleInput1" @focus="handleFocus1" @blur="handleBlur1" placeholder="请输入"></js-input>
             {{input1}}
         </div>
         <div class="row">

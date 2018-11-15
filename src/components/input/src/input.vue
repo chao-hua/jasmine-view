@@ -1,6 +1,6 @@
 <template>
     <div class="js-input">
-        <input type="text" :value="currentValue" @input="handleInput" @focus="handleFocus" @blur="handleBlur" @change="handleChange">
+        <input type="text" class="js-input__inner" :value="currentValue" @input="handleInput" @focus="handleFocus" @blur="handleBlur" @change="handleChange" :placeholder="placeholder">
     </div>
 </template>
 <script>
