@@ -9,7 +9,7 @@ A list of the new components that will do and the components that have done.
     + [ ] Icon 图标
 - Form 表单
     + [X] Radio 单选框
-    + [ ] Checkbox 多选框
+    + [X] Checkbox 多选框
     + [ ] Input 输入框
     + [ ] InputNumber 计数器
     + [ ] Select 选择器
