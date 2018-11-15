@@ -76,7 +76,6 @@ export default {
             } else if (Array.isArray(this.model)) {
                 return this.model.indexOf(this.label) > -1;
             }
-            // TODO trueLabel
         },
         isDisabled() {
             return this.isGroup ? this._checkboxGroup.disabled || this.disabled : this.disabled;
