@@ -1,3 +1,16 @@
 @import '../../common/index.scss';
 
-@include b(checkbox-group) {}
+@include b(checkbox-group) {
+    display: inline-block;
+    line-height: 1;
+    font-size: 0;
+    vertical-align: middle;
+
+    @include when(vertical) {
+        .js-checkbox {
+            display: block;
+            line-height: 30px;
+            height: 30px;
+        }
+    }
+}
