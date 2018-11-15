@@ -29,6 +29,5 @@ export default {
             return this.size;
         }
     },
-    methods: {}
 };
 </script>
