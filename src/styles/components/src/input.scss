@@ -1,3 +1,36 @@
 @import '../../common/index.scss';
 
-@include b(input) {}
+
+@include b(textarea) {
+    display: inline-block;
+    witth: 100%;
+    @include utils-font-size($--input-font-size);
+
+    @include e(inner) {
+        display: block;
+        padding: 5px 15px;
+        width: 100%;
+        box-sizing: border-box;
+        border: $--input-border;
+        border-radius: $--input-border-radius;
+        line-height: 1.5;
+    }
+}
+
+
+@include b(input) {
+    display: inline-block;
+    witth: 100%;
+    @include utils-font-size($--input-font-size);
+
+    @include e(inner) {
+        display: block;
+        padding: 0 15px;
+        width: 100%;
+        height: $--input-height;
+        box-sizing: border-box;
+        border: $--input-border;
+        border-radius: $--input-border-radius;
+        line-height: $--input-height;
+    }
+}
