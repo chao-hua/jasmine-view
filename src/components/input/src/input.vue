@@ -1,6 +1,6 @@
 <template>
     <div class="js-input">
-        <input type="text" class="js-input__inner" :value="currentValue" @input="handleInput" @focus="handleFocus" @blur="handleBlur" @change="handleChange" :placeholder="placeholder">
+        <input type="text" class="js-input__inner" v-bind="$attrs" :value="value" :disabled="disabled" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition">
     </div>
 </template>
 <script>
@@ -11,7 +11,10 @@ export default {
     componentName: 'JsInput',
     mixins: [Emitter],
     props: {
-        value: [String, Number],
+        value: {
+            type: [String, Number],
+            default: ''
+        },
         disabled: Boolean,
         clearable: Boolean,
         size: {
@@ -26,22 +29,28 @@ export default {
             validator(val) {
                 return oneOf(val, ['text', 'textarea']);
             }
-        },
-        max: Number,
-        min: Number,
-        placeholder: String
+        }
     },
     data() {
         return {
-            currentValue: this.value === undefined || this.value === null ? '' : this.value,
+            isOnComposition: false,
         }
     },
     computed: {},
     methods: {
+        handleComposition(ev) {
+            if (ev.type === 'compositionend') {
+                this.isOnComposition = false;
+                this.handleInput(ev);
+            } else {
+                this.isOnComposition = true;
+            }
+        },
         handleChange(ev) {
             this.$emit('change', ev.target.value);
         },
         handleInput(ev) {
+            if (this.isOnComposition) return;
             this.$emit('input', ev.target.value);
         },
         handleFocus(ev) {

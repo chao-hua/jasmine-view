@@ -5,7 +5,7 @@
             {{input1}}
         </div>
         <div class="row">
-            <js-input v-model="input2"></js-input>
+            <js-input v-model="input2" disabled></js-input>
             {{input2}}
         </div>
     </div>
