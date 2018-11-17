@@ -12,6 +12,10 @@
             <js-input type="textarea" v-model="input3" :rows="4"></js-input>
             {{input3}}
         </div>
+        <div class="row">
+            <js-input v-model="input4"></js-input>
+            {{input4}}
+        </div>
     </div>
 </template>
 <script>
