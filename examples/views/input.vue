@@ -16,7 +16,11 @@
             <js-input v-model="input4"></js-input>
             {{input4}}
         </div>
-    </div>
+        <div class="row">
+            <js-input v-model="input5"></js-input>
+            {{input5}}
+        </div>
+    </div
 </template>
 <script>
 export default {
