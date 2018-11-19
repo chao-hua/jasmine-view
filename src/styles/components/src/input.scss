@@ -143,16 +143,16 @@
         }
     }
 
-    @include m(mini) {
-        font-size: $--input-mini-font-size;
+    @include m(small) {
+        font-size: $--input-small-font-size;
 
         .js-input__inner {
-            height: $--input-mini-height;
-            line-height: $--input-mini-height;
+            height: $--input-small-height;
+            line-height: $--input-small-height;
         }
 
         .js-input__icon {
-            line-height: $--input-mini-height;
+            line-height: $--input-small-height;
         }
     }
 }

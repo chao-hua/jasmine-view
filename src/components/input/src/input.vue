@@ -51,7 +51,7 @@ export default {
         size: {
             type: String,
             validator(val) {
-                return oneOf(val, ['medium', 'mini']);
+                return oneOf(val, ['medium', 'small']);
             }
         },
         type: {

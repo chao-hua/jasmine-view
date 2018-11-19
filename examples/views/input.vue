@@ -21,7 +21,7 @@
             {{input5}}
         </div>
         <div class="row">
-            <js-input v-model="input5" size="mini" prefix-icon="terminal" suffix-icon="search">
+            <js-input v-model="input5" size="small" prefix-icon="terminal" suffix-icon="search">
             </js-input>
             {{input5}}
         </div>

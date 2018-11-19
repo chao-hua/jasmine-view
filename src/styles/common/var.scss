@@ -30,18 +30,18 @@ $--color-text-placeholder: #c5c8ce !default;
 -------------------------- */
 $--base-font-size: 14px !default;
 $--medium-font-size: 14px !default;
-$--mini-font-size: 12px !default;
+$--small-font-size: 12px !default;
 
 $--base-padding-horizontal: 10px !default;
 $--base-padding-vertical: 10px !default;
 $--medium-padding-horizontal: 8px !default;
 $--medium-padding-vertical: 8px !default;
-$--mini-padding-horizontal: 6px !default;
-$--mini-padding-vertical: 6px !default;
+$--small-padding-horizontal: 6px !default;
+$--small-padding-vertical: 6px !default;
 
 $--base-height: 36px !default;
 $--medium-height: 32px !default;
-$--mini-height: 28px !default;
+$--small-height: 28px !default;
 
 $--base-weight: 180px !default;
 
@@ -103,10 +103,10 @@ $--button-medium-padding-vertical: $--medium-padding-vertical !default;
 $--button-medium-padding-horizontal: $--medium-padding-horizontal !default;
 $--button-medium-padding-round-horizontal: 12px !default;
 
-$--button-small-font-size: $--mini-font-size !default;
+$--button-small-font-size: $--small-font-size !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--button-small-padding-vertical: $--mini-padding-vertical !default;
-$--button-small-padding-horizontal: $--mini-padding-horizontal !default;
+$--button-small-padding-vertical: $--small-padding-vertical !default;
+$--button-small-padding-horizontal: $--small-padding-horizontal !default;
 $--button-small-padding-round-horizontal: 10px !default;
 
 $--button-default-color: $--color-text-regular !default;
@@ -185,10 +185,10 @@ $--radio-button-medium-border-radius: $--border-radius-base !default;
 $--radio-button-medium-padding-vertical: $--medium-padding-vertical !default;
 $--radio-button-medium-padding-horizontal: $--medium-padding-horizontal !default;
 
-$--radio-button-small-font-size: $--mini-font-size !default;
+$--radio-button-small-font-size: $--small-font-size !default;
 $--radio-button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--radio-button-small-padding-vertical: $--mini-padding-vertical !default;
-$--radio-button-small-padding-horizontal: $--mini-padding-horizontal !default;
+$--radio-button-small-padding-vertical: $--small-padding-vertical !default;
+$--radio-button-small-padding-horizontal: $--small-padding-horizontal !default;
 
 /* Checkbox
 -------------------------- */
@@ -238,10 +238,10 @@ $--checkbox-button-medium-border-radius: $--border-radius-base !default;
 $--checkbox-button-medium-padding-vertical: $--medium-padding-vertical !default;
 $--checkbox-button-medium-padding-horizontal: $--medium-padding-horizontal !default;
 
-$--checkbox-button-small-font-size: $--mini-font-size !default;
+$--checkbox-button-small-font-size: $--small-font-size !default;
 $--checkbox-button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--checkbox-button-small-padding-vertical: $--mini-padding-vertical !default;
-$--checkbox-button-small-padding-horizontal: $--mini-padding-horizontal !default;
+$--checkbox-button-small-padding-vertical: $--small-padding-vertical !default;
+$--checkbox-button-small-padding-horizontal: $--small-padding-horizontal !default;
 
 /* Input
 -------------------------- */
@@ -264,5 +264,5 @@ $--input-disabled-color: $--disabled-color-base !default;
 $--input-medium-font-size: $--medium-font-size !default;
 $--input-medium-height: $--medium-height !default;
 
-$--input-mini-font-size: $--mini-font-size !default;
-$--input-mini-height: $--mini-height !default;
+$--input-small-font-size: $--small-font-size !default;
+$--input-small-height: $--small-height !default;
