@@ -20,7 +20,7 @@
             <js-input v-model="input5"></js-input>
             {{input5}}
         </div>
-    </div
+    </div>
 </template>
 <script>
 export default {
