@@ -10,7 +10,7 @@ A list of the new components that will do and the components that have done.
 - Form 表单
     + [X] Radio 单选框
     + [X] Checkbox 多选框
-    + [ ] Input 输入框
+    + [X] Input 输入框
     + [ ] InputNumber 计数器
     + [ ] Select 选择器
     + [ ] Cascader 级联选择器

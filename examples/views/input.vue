@@ -9,29 +9,29 @@
             {{input2}}
         </div>
         <div class="row">
-            <js-input v-model="input4">
+            <js-input v-model="input3" placeholder="请输入" clearable>
                 <i slot="prefix" class="fa fa-terminal js-input__icon"></i>
                 <i slot="suffix" class="fa fa-search js-input__icon"></i>
+            </js-input>
+            {{input3}}
+        </div>
+        <div class="row">
+            <js-input v-model="input4" size="medium" prefix-icon="terminal" suffix-icon="search" placeholder="请输入">
             </js-input>
             {{input4}}
         </div>
         <div class="row">
-            <js-input v-model="input5" size="medium" prefix-icon="terminal" suffix-icon="search">
+            <js-input v-model="input5" size="small" prefix-icon="terminal" suffix-icon="search" placeholder="请输入">
             </js-input>
             {{input5}}
         </div>
         <div class="row">
-            <js-input v-model="input5" size="small" prefix-icon="terminal" suffix-icon="search">
-            </js-input>
-            {{input5}}
+            <js-input type="textarea" v-model="input6" :rows="4" placeholder="请输入"></js-input>
+            {{input6}}
         </div>
         <div class="row">
-            <js-input type="textarea" v-model="input3" :rows="4" placeholder="请输入"></js-input>
-            {{input3}}
-        </div>
-        <div class="row">
-            <js-input type="textarea" v-model="input3" disabled placeholder="请输入"></js-input>
-            {{input3}}
+            <js-input type="textarea" v-model="input7" disabled placeholder="请输入"></js-input>
+            {{input7}}
         </div>
     </div>
 </template>
@@ -72,7 +72,9 @@ export default {
     margin: 10px 0;
 }
 
-.js-input {
+.js-input,
+.js-textarea
+ {
     width: 400px;
 }
 </style>
