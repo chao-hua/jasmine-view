@@ -1,28 +1,33 @@
 <template>
     <div :class="[
         type==='textarea' ? 'js-textarea' : 'js-input',
+        inputSize ? 'js-input--' + inputSize : '',
         {
             'is-disabled': disabled,
-            'el-input-group': $slots.prepend || $slots.append,
-            'el-input-group--append': $slots.append,
-            'el-input-group--prepend': $slots.prepend,
-            'el-input--prefix': $slots.prefix,
-            'el-input--suffix': $slots.suffix || clearable
+            'js-input-group': $slots.prepend || $slots.append,
+            'js-input-group--append': $slots.append,
+            'js-input-group--prepend': $slots.prepend,
+            'js-input--prefix': $slots.prefix || prefixIcon,
+            'js-input--suffix': $slots.suffix || suffixIcon || clearable
         }
     ]">
         <template v-if="type !== 'textarea'">
-            <div class="el-input-group__prepend" v-if="$slots.prepend">
+            <div class="js-input-group__prepend" v-if="$slots.prepend">
                 <slot name="prepend"></slot>
             </div>
-            <span class="el-input__prefix" v-if="$slots.prefix">
+            <span class="js-input__prefix" v-if="$slots.prefix || prefixIcon">
                 <slot name="prefix"></slot>
+                <i class="js-input__icon fa" v-if="prefixIcon" :class="'fa-'+prefixIcon"></i>
             </span>
             <input type="text" ref="input" class="js-input__inner" v-bind="$attrs" :value="value" :disabled="disabled" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition">
-            <span class="el-input__suffix" v-if="$slots.suffix || showClear">
-                <slot name="suffix" v-if="!showClear"></slot>
-                <i v-else class="fa fa-remove" @click="clear"></i>
+            <span class="js-input__suffix" v-if="$slots.suffix || suffixIcon || showClear">
+                <template v-if="!showClear">
+                    <slot name="suffix"></slot>
+                    <i class="js-input__icon fa" v-if="suffixIcon" :class="'fa-'+suffixIcon"></i>
+                </template>
+                <i v-else class="fa fa-times-circle js-input__icon js-input__clear" @click="clear"></i>
             </span>
-            <div class="el-input-group__append" v-if="$slots.append">
+            <div class="js-input-group__append" v-if="$slots.append">
                 <slot name="append"></slot>
             </div>
         </template>
@@ -46,7 +51,7 @@ export default {
         size: {
             type: String,
             validator(val) {
-                return oneOf(val, ['medium', 'small']);
+                return oneOf(val, ['medium', 'mini']);
             }
         },
         type: {
@@ -55,7 +60,9 @@ export default {
             validator(val) {
                 return oneOf(val, ['text', 'textarea']);
             }
-        }
+        },
+        suffixIcon: String,
+        prefixIcon: String,
     },
     data() {
         return {
@@ -64,7 +71,10 @@ export default {
     },
     computed: {
         showClear() {
-            return this.clearable && !this.disabled && !this.readonly && this.value !== '';
+            return this.clearable && !this.disabled && this.value !== '';
+        },
+        inputSize() {
+            return this.size;
         }
     },
     methods: {

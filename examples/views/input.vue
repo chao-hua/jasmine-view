@@ -5,20 +5,33 @@
             {{input1}}
         </div>
         <div class="row">
-            <js-input v-model="input2" disabled></js-input>
+            <js-input v-model="input2" disabled clearable></js-input>
             {{input2}}
         </div>
         <div class="row">
-            <js-input type="textarea" v-model="input3" :rows="4"></js-input>
-            {{input3}}
-        </div>
-        <div class="row">
-            <js-input v-model="input4"></js-input>
+            <js-input v-model="input4">
+                <i slot="prefix" class="fa fa-terminal js-input__icon"></i>
+                <i slot="suffix" class="fa fa-search js-input__icon"></i>
+            </js-input>
             {{input4}}
         </div>
         <div class="row">
-            <js-input v-model="input5"></js-input>
+            <js-input v-model="input5" size="medium" prefix-icon="terminal" suffix-icon="search">
+            </js-input>
             {{input5}}
+        </div>
+        <div class="row">
+            <js-input v-model="input5" size="mini" prefix-icon="terminal" suffix-icon="search">
+            </js-input>
+            {{input5}}
+        </div>
+        <div class="row">
+            <js-input type="textarea" v-model="input3" :rows="4" placeholder="请输入"></js-input>
+            {{input3}}
+        </div>
+        <div class="row">
+            <js-input type="textarea" v-model="input3" disabled placeholder="请输入"></js-input>
+            {{input3}}
         </div>
     </div>
 </template>
@@ -57,5 +70,9 @@ export default {
 <style lang="scss" scoped>
 .row {
     margin: 10px 0;
+}
+
+.js-input {
+    width: 400px;
 }
 </style>
