@@ -14,7 +14,7 @@
         <span class="js-input-number__increase" :class="{'is-disabled': maxDisabled}" v-if="controls" role="button">
             <i class="fa fa-plus"></i>
         </span>
-        <js-input ref="input" :value="currentInputValue" :disabled="inputNumberDisabled" :size="inputNumberSize" :max="max" :min="min" @blur="handleBlur" @focus="handleFocus" @change="handleChange">></js-input>
+        <js-input ref="input" :value="currentInputValue" :disabled="inputNumberDisabled" :size="inputNumberSize" :max="max" :min="min" @blur="handleBlur" @focus="handleFocus" @change="handleChange"></js-input>
     </div>
 </template>
 <script>
@@ -67,7 +67,7 @@ export default {
     },
     data() {
         return {
-
+            currentValue: 0
         }
     },
     computed: {
@@ -87,7 +87,7 @@ export default {
             return this.disabled;
         },
         currentInputValue() {
-
+            return this.currentValue;
         }
     },
     methods: {
@@ -99,7 +99,21 @@ export default {
         },
         handleBlur(ev) {
             this.$emit('blur', event);
-        }
+        },
+        setCurrentValue(newVal) {
+            const oldVal = this.currentValue;
+            if (typeof newVal === 'number' && this.precision !== undefined) {
+                newVal = newVal;
+            }
+            if (newVal >= this.max) newVal = this.max;
+            if (newVal <= this.min) newVal = this.min;
+            if (newVal === oldVal) {
+                return;
+            }
+            this.$emit('input', newVal);
+            this.$emit('change', newVal, oldVal);
+            this.currentValue = newVal;
+        },
     }
 };
 </script>
