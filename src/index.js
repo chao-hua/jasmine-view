@@ -12,6 +12,7 @@ import RadioGroup from './components/radio-group';
 import Checkbox from './components/checkbox';
 import CheckboxGroup from './components/checkbox-group';
 import Input from './components/input';
+import InputNumber from './components/input-number';
 
 const components = {
     Button,
@@ -28,6 +29,7 @@ const components = {
     Checkbox,
     CheckboxGroup,
     Input,
+    InputNumber,
 };
 
 const install = function(Vue) {

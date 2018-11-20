@@ -46,5 +46,11 @@ export default new Router({
             component: () =>
                 import ('./views/input.vue')
         },
+        {
+            path: '/input-number',
+            name: 'input-number',
+            component: () =>
+                import ('./views/input-number.vue')
+        },
     ]
 })

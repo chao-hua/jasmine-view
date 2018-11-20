@@ -19,7 +19,7 @@
                 <slot name="prefix"></slot>
                 <i class="js-input__icon fa" v-if="prefixIcon" :class="'fa-'+prefixIcon"></i>
             </span>
-            <input type="text" ref="input" class="js-input__inner" v-bind="$attrs" :value="value" :disabled="disabled" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition">
+            <input type="text" ref="input" class="js-input__inner" v-bind="$attrs" :value="value" :disabled="disabled" :aria-label="label" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition">
             <span class="js-input__suffix" v-if="$slots.suffix || suffixIcon || showClear">
                 <template v-if="!showClear">
                     <slot name="suffix"></slot>
@@ -31,7 +31,7 @@
                 <slot name="append"></slot>
             </div>
         </template>
-        <textarea v-else type="textarea" ref="textarea" class="js-textarea__inner" v-bind="$attrs" :value="value" :disabled="disabled" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition"></textarea>
+        <textarea v-else type="textarea" ref="textarea" class="js-textarea__inner" v-bind="$attrs" :value="value" :disabled="disabled" :aria-label="label" @input="handleInput" @change="handleChange" @focus="handleFocus" @blur="handleBlur" @compositionstart="handleComposition" @compositionupdate="handleComposition" @compositionend="handleComposition"></textarea>
     </div>
 </template>
 <script>
@@ -63,6 +63,7 @@ export default {
         },
         suffixIcon: String,
         prefixIcon: String,
+        label: String,
     },
     data() {
         return {

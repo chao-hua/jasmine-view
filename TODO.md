@@ -6,7 +6,6 @@ A list of the new components that will do and the components that have done.
     + [X] Layout 布局
     + [X] Grid 栅格
     + [X] Button 按钮
-    + [ ] Icon 图标
 - Form 表单
     + [X] Radio 单选框
     + [X] Checkbox 多选框

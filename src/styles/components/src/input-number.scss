@@ -1,0 +1,7 @@
+@import '../../common/index.scss';
+
+
+@include b(input-number) {
+    display: inline-block;
+    width: 100%;
+}

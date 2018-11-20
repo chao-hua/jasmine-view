@@ -21,6 +21,9 @@
                     <li>
                         <router-link to="/input">Input 输入框</router-link>
                     </li>
+                    <li>
+                        <router-link to="/input-number">InputNumber 计数器</router-link>
+                    </li>
                 </ul>
             </nav>
             <router-view></router-view>
@@ -41,12 +44,14 @@ nav {
 
     li {
         display: inline-block;
-    }
+        border-right: solid 1px #bbb;
+        padding-right: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
 
-    li+li {
-        border-left: solid 1px #bbb;
-        padding-left: 10px;
-        margin-left: 10px;
+        &:last-child {
+            border-right: none;
+        }
     }
 }
 
