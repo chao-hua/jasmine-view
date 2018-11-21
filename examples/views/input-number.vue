@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <js-input-number v-model="inputNumber1" @change="handleChange1" @input="handleInputNumber1" @focus="handleFocus1" @blur="handleBlur1" @clear="hadnleClose1"></js-input-number>
+            <js-input-number v-model="inputNumber1" @change="handleChange1" @input="handleInputNumber1" @focus="handleFocus1" @blur="handleBlur1" :max="20" :mix="0" :step="3"></js-input-number>
             {{inputNumber1}}
         </div>
     </div>
@@ -26,15 +26,12 @@ export default {
         handleInputNumber1(val) {
             console.log('handleInputNumber1：' + val);
         },
-        handleFocus1(val) {
-            console.log(val);
+        handleFocus1(e) {
+            // console.log(e);
         },
-        handleBlur1(val) {
-            console.log(val);
+        handleBlur1(e) {
+            console.log(e);
         },
-        hadnleClose1() {
-            console.log('hadnleClose1');
-        }
     }
 }
 </script>

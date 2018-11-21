@@ -55,11 +55,11 @@ export default {
         handleInput1(val) {
             console.log('handleInput1：' + val);
         },
-        handleFocus1(val) {
-            console.log(val);
+        handleFocus1(e) {
+            console.log(e);
         },
-        handleBlur1(val) {
-            console.log(val);
+        handleBlur1(e) {
+            console.log(e);
         },
         hadnleClose1() {
             console.log('hadnleClose1');

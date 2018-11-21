@@ -25,6 +25,9 @@ export default {
     name: 'JsInputNumber',
     componentName: 'JsInputNumber',
     mixins: [Emitter],
+    components: {
+        JsInput
+    },
     props: {
         value: {},
         step: {
@@ -87,33 +90,67 @@ export default {
             return this.disabled;
         },
         currentInputValue() {
+            if (typeof this.currentValue === 'number' && this.precision !== undefined) {
+                return this.currentValue.toFixed(this.precision);
+            }
             return this.currentValue;
         }
     },
     methods: {
-        handleChange(ev) {
-            this.$emit('change', ev.target.value);
+        toPrecision(num, precision) {
+            return precision ? parseFloat(Number(num).toFixed(precision)) : num;
+        },
+        handleChange(val) {
+            const newVal = val === '' ? undefined : Number(val);
+            if (!isNaN(newVal) || val === '') {
+                this.setCurrentValue(newVal);
+            }
         },
         handleFocus(ev) {
             this.$emit('focus', event);
         },
         handleBlur(ev) {
             this.$emit('blur', event);
+            this.setCurrentValue(this.currentInputValue);
         },
         setCurrentValue(newVal) {
             const oldVal = this.currentValue;
             if (typeof newVal === 'number' && this.precision !== undefined) {
-                newVal = newVal;
+                newVal = this.toPrecision(newVal, this.precision);
             }
             if (newVal >= this.max) newVal = this.max;
             if (newVal <= this.min) newVal = this.min;
             if (newVal === oldVal) {
+                // this.$refs.input.setCurrentValue(this.currentInputValue);
                 return;
             }
             this.$emit('input', newVal);
             this.$emit('change', newVal, oldVal);
             this.currentValue = newVal;
         },
+    },
+    watch:{
+        value:{
+            immediate:true,
+            handler(value){
+                /*console.log('value:'+value);
+                console.log('currentValue:'+this.currentValue);
+                console.log('currentInputValue:'+this.currentInputValue);
+                let newVal = value === undefined ? value : Number(value);
+                if (newVal !== undefined) {
+                  if (isNaN(newVal)) {
+                    return;
+                  }
+                  if (this.precision !== undefined) {
+                    newVal = this.toPrecision(newVal, this.precision);
+                  }
+                }
+                if (newVal >= this.max) newVal = this.max;
+                if (newVal <= this.min) newVal = this.min;
+                this.currentValue = newVal;
+                this.$emit('input', newVal);*/
+            }
+        }
     }
 };
 </script>
