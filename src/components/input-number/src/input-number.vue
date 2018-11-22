@@ -133,7 +133,7 @@ export default {
         value:{
             immediate:true,
             handler(value){
-                /*console.log('value:'+value);
+                console.log('value:'+value);
                 console.log('currentValue:'+this.currentValue);
                 console.log('currentInputValue:'+this.currentInputValue);
                 let newVal = value === undefined ? value : Number(value);
@@ -148,7 +148,7 @@ export default {
                 if (newVal >= this.max) newVal = this.max;
                 if (newVal <= this.min) newVal = this.min;
                 this.currentValue = newVal;
-                this.$emit('input', newVal);*/
+                this.$emit('input', newVal);
             }
         }
     }
