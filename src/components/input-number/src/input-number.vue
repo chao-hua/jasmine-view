@@ -111,7 +111,7 @@ export default {
         },
         handleBlur(ev) {
             this.$emit('blur', event);
-            this.setCurrentValue(this.currentInputValue);
+            // this.$refs.input.setCurrentValue(this.currentInputValue);
         },
         setCurrentValue(newVal) {
             const oldVal = this.currentValue;
@@ -121,7 +121,7 @@ export default {
             if (newVal >= this.max) newVal = this.max;
             if (newVal <= this.min) newVal = this.min;
             if (newVal === oldVal) {
-                this.$refs.input.setCurrentValue(this.currentInputValue);
+                // this.$refs.input.setCurrentValue(this.currentInputValue);
                 return;
             }
             this.$emit('input', newVal);
