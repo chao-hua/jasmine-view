@@ -84,7 +84,7 @@ export default {
             return (this.value - this.step) < this.min;
         },
         maxDisabled() {
-            return (this.value + this.step) > this.min;
+            return (this.value + this.step) > this.max;
         },
         inputNumberDisabled() {
             return this.disabled;
@@ -94,7 +94,7 @@ export default {
                 return this.currentValue.toFixed(this.precision);
             }
             return this.currentValue;
-        }
+        }, 
     },
     methods: {
         toPrecision(num, precision) {
@@ -128,6 +128,10 @@ export default {
             this.$emit('change', newVal, oldVal);
             this.currentValue = newVal;
         },
+        increase(){
+            if(this.inputNumberDisabled || this.maxDisabled) return;
+            const value = this.value || 0;
+        }
     },
     watch:{
         value:{
