@@ -133,9 +133,9 @@ export default {
         value:{
             immediate:true,
             handler(value){
-                console.log('value:'+value);
+                /*console.log('value:'+value);
                 console.log('currentValue:'+this.currentValue);
-                console.log('currentInputValue:'+this.currentInputValue);
+                console.log('currentInputValue:'+this.currentInputValue);*/
                 let newVal = value === undefined ? value : Number(value);
                 if (newVal !== undefined) {
                   if (isNaN(newVal)) {
