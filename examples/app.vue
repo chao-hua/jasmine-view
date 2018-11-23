@@ -21,9 +21,9 @@
                     <li>
                         <router-link to="/input">Input 输入框</router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <router-link to="/input-number">InputNumber 计数器</router-link>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             <router-view></router-view>
