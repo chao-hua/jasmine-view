@@ -24,7 +24,7 @@ export default {
             // console.log('handleChange1:' + val);
         },
         handleInputNumber1(val) {
-            // console.log('handleInputNumber1：' + val);
+            console.log('handleInputNumber1：' + val);
         },
         handleFocus1(e) {
             console.log(e);
