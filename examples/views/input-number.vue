@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         handleChange1(val) {
-           console.log('handleChange1:' + val);
+           // console.log('handleChange1:' + val);
         },
         handleInputNumber1(val) {
             console.log('handleInputNumber1：' + val);
