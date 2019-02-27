@@ -21,16 +21,16 @@ export default {
     },
     methods: {
         handleChange1(val) {
-            // console.log('handleChange1:' + val);
+            console.log('handleChange1:' + val);
         },
         handleInputNumber1(val) {
-            // console.log('handleInputNumber1：' + val);
+            console.log('handleInputNumber1：' + val);
         },
         handleFocus1(e) {
-            // console.log(e);
+            console.log(e);
         },
         handleBlur1(e) {
-            // console.log(e);
+            console.log(e);
         },
     }
 }
